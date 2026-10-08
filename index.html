@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Les 08 · Delen met de juiste rechten · NovaDepot</title>
+  <link rel="icon" href="assets/novadepot-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-storage="novadepot_delen_v1_" data-laatste-stap="6">
+
+<!-- Pictogrammen: eenvoudige lijntekeningen, eigen werk. Gebruik: een svg met class "ic" en daarin use met href naar het symbool. -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4 2.5 4H5"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 5h6a4 4 0 0 1 4 4v11a3 3 0 0 0-3-3H2z"/><path d="M22 5h-6a4 4 0 0 0-4 4v11a3 3 0 0 1 3-3h7z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 10"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4.5 6h.01M4.5 12h.01M4.5 18h.01" stroke-width="3"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3.5l9.5 17h-19z"/><path d="M12 10v4.5M12 17.5h.01"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.4 2.5c-.6.3-1 .8-1 1.5v.4M12 17h.01"/></symbol>
+  <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5H9l2 2h8.5A1.5 1.5 0 0 1 21 8.5v10a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 18.5z"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M12 15V3M7 8l5-5 5 5"/><path d="M4 14v6h16v-6"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.8a3.5 3.5 0 0 1 0 6.4M18 14.5a6.5 6.5 0 0 1 3.5 5.5"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 7l4 4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9l-5.2 2.8 1-5.9-4.3-4.1 5.9-.8z"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+</svg>
+
+<div class="teacher-banner">Leraarweergave: de roze kaders tonen waar je een screenshot kan plaatsen. Leerlingen zien die kaders niet.</div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html" title="Naar het begin van de les">
+      <img src="assets/novadepot-logo.svg" alt="NovaDepot">
+      <span class="brand-lesson">Les 08 · Delen met de juiste rechten</span>
+    </a>
+    <span class="topbar-spacer"></span>
+    <img class="dalton-mark" src="assets/dalton-gent-logo.png" alt="GO! Dalton Gent">
+  </div>
+</header>
+
+<div class="layout">
+
+  <!-- ============ LINKS: de route ============ -->
+  <nav class="route" aria-label="Stappenplan">
+    <p class="route-title">Stappenplan</p>
+    <button class="nav-btn" type="button" data-step="start"><span class="nav-num"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span class="nav-lbl">Start</span></button>
+    <button class="nav-btn" type="button" data-step="theorie"><span class="nav-num"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg></span><span class="nav-lbl">Theoriekaart</span></button>
+
+    <p class="route-group">Testen met je buur</p>
+    <button class="nav-btn" type="button" data-step="1"><span class="nav-num"><span class="nav-n">1</span><svg class="ic nav-check" aria-hidden="true"><use href="#i-check"/></svg></span><span class="nav-lbl">Klaarzetten</span></button>
+    <button class="nav-btn" type="button" data-step="2"><span class="nav-num"><span class="nav-n">2</span><svg class="ic nav-check" aria-hidden="true"><use href="#i-check"/></svg></span><span class="nav-lbl">Kijker</span></button>
+    <button class="nav-btn" type="button" data-step="3"><span class="nav-num"><span class="nav-n">3</span><svg class="ic nav-check" aria-hidden="true"><use href="#i-check"/></svg></span><span class="nav-lbl">Reageerder</span></button>
+    <button class="nav-btn" type="button" data-step="4"><span class="nav-num"><span class="nav-n">4</span><svg class="ic nav-check" aria-hidden="true"><use href="#i-check"/></svg></span><span class="nav-lbl">Bewerker</span></button>
+
+    <p class="route-group">Afronden</p>
+    <button class="nav-btn" type="button" data-step="5"><span class="nav-num"><span class="nav-n">5</span><svg class="ic nav-check" aria-hidden="true"><use href="#i-check"/></svg></span><span class="nav-lbl">Je map delen</span></button>
+    <button class="nav-btn" type="button" data-step="6"><span class="nav-num"><span class="nav-n">6</span><svg class="ic nav-check" aria-hidden="true"><use href="#i-check"/></svg></span><span class="nav-lbl">Controleren en inleveren</span></button>
+    <button class="nav-btn extra" type="button" data-step="extra"><span class="nav-num"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg></span><span class="nav-lbl">Extra</span></button>
+  </nav>
+
+  <!-- ============ MIDDEN: één stap tegelijk ============ -->
+  <main id="main">
+
+    <!-- ===== START ===== -->
+    <section class="pane" id="pane-start" aria-labelledby="h-start">
+      <article class="card">
+        <header class="card-head">
+          <div class="tags"><span class="tag tag-where">Toegepaste Informatica · les 08</span></div>
+          <h1 id="h-start">Delen met de juiste rechten</h1>
+        </header>
+        <div class="card-body">
+          <p class="intro">Tom Peeters maakte de leveringsplanning van dinsdag. Wie mag ze lezen? Wie mag een opmerking geven? Wie mag ze veranderen? Je test het met je buur. Daarna deel je je map NovaDepot met je leraar.</p>
+
+          <h2 class="sec">Zo werk je</h2>
+          <div class="werkwijze">
+            <div class="werk-tegel"><svg class="ic" aria-hidden="true"><use href="#i-monitor"/></svg><strong>Lees hier</strong><span>Op deze pagina staat wat je moet doen, stap voor stap.</span></div>
+            <div class="werk-tegel"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg><strong>Test met je buur</strong><span>Elk deelt de eigen Leveringsplanning met de ander.</span></div>
+            <div class="werk-tegel inleveren"><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg><strong>Schrijf in je werkdocument</strong><span>Dat lever je in, samen met je planning.</span></div>
+          </div>
+
+          <h2 class="sec">Na deze les kan je</h2>
+          <ul class="doelen">
+            <li>een document delen als kijker, reageerder of bewerker;</li>
+            <li>kiezen welke rol iemand nodig heeft: zo weinig als nodig;</li>
+            <li>een vorige versie terugzetten als iemand iets wist.</li>
+          </ul>
+
+          <div class="tip"><svg class="ic" aria-hidden="true"><use href="#i-bulb"/></svg><p><strong>Vast?</strong> Kijk eerst op de theoriekaart. Open dan <em>Hulp nodig?</em> onder de stap. Vraag het daarna aan je buur, en pas dan aan je leraar.</p></div>
+
+          <p class="start-cta"><button class="btn btn-primary" type="button" data-goto="1">Start met stap 1 <svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></button></p>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== THEORIEKAART ===== -->
+    <section class="pane" id="pane-theorie" aria-labelledby="h-theorie">
+      <article class="card">
+        <header class="card-head">
+          <div class="tags"><span class="tag tag-where">Spiekbriefje</span></div>
+          <h2 id="h-theorie">Theoriekaart</h2>
+        </header>
+        <div class="card-body">
+          <p class="intro">Alles op één plek. Kom hier terug als je iets niet meer weet.</p>
+
+          <div class="t-grid">
+            <section class="t-card">
+              <h3><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg>Zo werkt elke les</h3>
+              <ul>
+                <li>Je start in Classroom, bij de opdracht van vandaag.</li>
+                <li>In de opdracht staan de lespagina, je werkdocument en je planning.</li>
+                <li>Klaar? Klik in de opdracht op <span class="ui">Inleveren</span>.</li>
+              </ul>
+            </section>
+
+            <section class="t-card">
+              <h3><svg class="ic" aria-hidden="true"><use href="#i-check-circle"/></svg>Zo weinig als nodig</h3>
+              <p>Geef iemand de <strong>kleinste rol</strong> die volstaat. Moet iemand alleen lezen? Dan is het <strong>Kijker</strong>.</p>
+              <p>Een bewerker kan alles veranderen, en het document ook met anderen delen.</p>
+            </section>
+
+            <section class="t-card wide">
+              <h3><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg>Drie rollen</h3>
+              <table class="t-rows">
+                <tr><th>Kijker</th><td>mag <strong>lezen</strong>. Niets veranderen, geen reactie.</td></tr>
+                <tr><th>Reageerder</th><td>mag lezen en een <strong>reactie</strong> schrijven. Wat een reageerder typt, wordt een voorstel (suggestie).</td></tr>
+                <tr><th>Bewerker</th><td>mag lezen, reageren en <strong>zelf veranderen</strong>, ook wissen.</td></tr>
+                <tr><th>Eigenaar</th><td>jij, voor je eigen planning. Jij kiest wie welke rol krijgt.</td></tr>
+              </table>
+            </section>
+
+            <section class="t-card">
+              <h3><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg>Delen</h3>
+              <ul>
+                <li>In het document: rechtsboven <span class="ui">Delen</span>.</li>
+                <li>Een map in Drive: rechtermuisknop › <span class="ui">Delen</span> › <span class="ui">Delen</span>.</li>
+                <li>Typ een naam, kies de rol, klik op <span class="ui">Verzenden</span>.</li>
+              </ul>
+            </section>
+
+            <section class="t-card">
+              <h3><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>Algemene toegang</h3>
+              <ul>
+                <li><span class="ui">Beperkt</span>: alleen wie jij toevoegt, kan het openen. Kies dit.</li>
+                <li><span class="ui">Iedereen met de link</span>: wie de link heeft, ook buiten de school.</li>
+              </ul>
+            </section>
+
+            <section class="t-card">
+              <h3><svg class="ic" aria-hidden="true"><use href="#i-pen"/></svg>Een rol veranderen of stoppen</h3>
+              <ul>
+                <li><span class="ui">Delen</span> › rechts van de naam de rol, met een pijl.</li>
+                <li>Kies een andere rol, of <span class="ui">Toegang verwijderen</span>.</li>
+                <li>Klik op <span class="ui">Opslaan</span>.</li>
+              </ul>
+            </section>
+
+            <section class="t-card">
+              <h3><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>Een reactie</h3>
+              <ul>
+                <li>Selecteer de tekst.</li>
+                <li>Klik op <span class="ui">Reactie toevoegen</span>: in de werkbalk, of naast de tekst.</li>
+                <li>Typ je reactie en klik op <span class="ui">Invoegen</span>.</li>
+              </ul>
+            </section>
+
+            <section class="t-card">
+              <h3><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg>Een vorige versie</h3>
+              <ul>
+                <li>Rechtsboven het klokje (<em>Laatste bewerking</em>).</li>
+                <li>Kies rechts een eerdere versie.</li>
+                <li><span class="ui">Deze versie herstellen</span> › <span class="ui">Herstellen</span>.</li>
+              </ul>
+            </section>
+
+            <section class="t-card wide">
+              <h3><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>Woorden</h3>
+              <table class="t-rows">
+                <tr><th>delen</th><td>iemand anders toegang geven tot jouw document of map</td></tr>
+                <tr><th>rol</th><td>wat iemand mag doen: kijken, reageren of bewerken</td></tr>
+                <tr><th>reactie</th><td>een opmerking naast de tekst; de tekst zelf verandert niet</td></tr>
+                <tr><th>versie</th><td>hoe het document er op een bepaald moment uitzag</td></tr>
+                <tr><th>versiegeschiedenis</th><td>de lijst met alle vorige versies</td></tr>
+              </table>
+            </section>
+
+            <section class="t-card wide warn">
+              <h3><svg class="ic" aria-hidden="true"><use href="#i-alert"/></svg>Veelgemaakte fouten</h3>
+              <ul>
+                <li>Bij <em>Algemene toegang</em> <span class="ui">Iedereen met de link</span> gekozen.</li>
+                <li>Iedereen <span class="ui">Bewerker</span> gemaakt, ook wie alleen moet lezen.</li>
+                <li>Vergeten de toegang van je buur te verwijderen.</li>
+                <li>Een voorstel (suggestie) gezien als een echte verandering.</li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== STAP 1 ===== -->
+    <section class="pane" id="pane-1" aria-labelledby="h-1">
+      <article class="card">
+        <header class="card-head">
+          <div class="tags"><span class="tag tag-step">Stap 1</span><span class="tag tag-where"><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg> Werkdocument</span><span class="tag tag-where"><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg> Leveringsplanning</span></div>
+          <h2 id="h-1">Klaarzetten</h2>
+        </header>
+        <div class="card-body">
+          <p class="intro">Je opent je werkdocument en je Leveringsplanning. Vandaag test je samen met je buur.</p>
+          <div class="todo-box">
+            <h3><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg> Wat moet je doen?</h3>
+            <ol class="todo">
+              <li>Open je werkdocument <strong>WP3_Delen-met-de-juiste-rechten</strong>. Het staat in je opdracht in <strong>Google Classroom</strong>, net als deze pagina.</li>
+              <li>Vul bovenaan je <strong>naam</strong>, je <strong>klas</strong> en de <strong>datum</strong> in.</li>
+              <li>Open ook je <strong>Leveringsplanning</strong>. Ze staat in dezelfde opdracht.<span class="sub">In de titel staat jouw naam: het is jouw eigen planning.</span></li>
+              <li>Spreek af met je buur: jullie testen samen. Elk deelt de eigen planning met de ander.</li>
+            </ol>
+          </div>
+          <div class="tip"><svg class="ic" aria-hidden="true"><use href="#i-bulb"/></svg><p><strong>Met een oneven aantal?</strong> Werk dan met drie. Je deelt je planning met twee mensen.</p></div>
+          <details class="help"><summary><svg class="ic" aria-hidden="true"><use href="#i-help"/></svg> Hulp nodig?</summary>
+            <div class="help-body">
+              <p>Zie je je Leveringsplanning niet? Ze staat in de opdracht, onder je werkdocument. Klik erop: ze opent in Google Documenten.</p>
+              <p>Er staan vier regels in, van 7.30 uur tot 13.00 uur. Verander nog niets.</p>
+            </div>
+          </details>
+          <p class="result"><svg class="ic" aria-hidden="true"><use href="#i-check-circle"/></svg><span><strong>Klaar als:</strong> je werkdocument en je Leveringsplanning open zijn, en je weet met wie je samenwerkt.</span></p>
+        </div>
+        <footer class="card-nav">
+          <button class="btn" type="button" data-goto="start"><svg class="ic" aria-hidden="true"><use href="#i-left"/></svg> Start</button>
+          <button class="btn btn-primary" type="button" data-goto="2">Stap 2 <svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></button>
+        </footer>
+      </article>
+    </section>
+
+    <!-- ===== STAP 2 ===== -->
+    <section class="pane" id="pane-2" aria-labelledby="h-2">
+      <article class="card">
+        <header class="card-head">
+          <div class="tags"><span class="tag tag-step">Stap 2</span><span class="tag tag-where"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg> Met je buur</span><span class="tag tag-where"><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg> Werkdocument, deel 1</span></div>
+          <h2 id="h-2">Kijker</h2>
+        </header>
+        <div class="card-body">
+          <p class="intro">Een kijker mag lezen. Je deelt je planning met je buur, als kijker. Je buur doet hetzelfde met de zijne.</p>
+          <div class="todo-box">
+            <h3><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg> Wat moet je doen?</h3>
+            <ol class="todo">
+              <li>Klik in je Leveringsplanning rechtsboven op <span class="ui">Delen</span>.</li>
+              <li>Typ de naam van je buur en klik in de lijst op de juiste naam. Kies rechts <span class="ui">Kijker</span> en klik op <span class="ui">Verzenden</span>.</li>
+              <li>Klik opnieuw op <span class="ui">Delen</span>. Staat onder <em>Algemene toegang</em> <span class="ui">Beperkt</span>? Klik op <span class="ui">Klaar</span>.</li>
+              <li>Open <a href="https://drive.google.com" target="_blank" rel="noopener">drive.google.com</a> in een nieuw tabblad. Klik links op <span class="ui">Gedeeld met mij</span> en open de planning van je buur.</li>
+              <li>Probeer een reactie te geven en een regel te veranderen. Lukt het?</li>
+              <li>Vul in <strong>deel 1</strong> de kolom <em>Als Kijker</em> in.</li>
+            </ol>
+            <figure class="shot" data-shot="stap2-delen-kijker.png" data-caption="1 de naam van je buur · 2 Kijker · 3 Verzenden" data-alt="Het venster Leveringsplanning delen. Rode kaders met de nummers 1 bij het veld met de naam, 2 bij de rol Kijker en 3 bij de knop Verzenden."></figure>
+            <figure class="shot" data-shot="stap2-algemene-toegang.png" data-caption="Opnieuw Delen: 1 Algemene toegang staat op Beperkt · 2 Klaar" data-alt="Het venster Leveringsplanning delen met Personen met toegang en Algemene toegang. Rode kaders bij Beperkt en bij Klaar."></figure>
+          </div>
+          <div class="tip warn"><svg class="ic" aria-hidden="true"><use href="#i-alert"/></svg><p><strong>Kies nooit <em>Iedereen met de link</em>.</strong> Dan kan iedereen met de link je planning openen, ook buiten de school.</p></div>
+          <details class="help"><summary><svg class="ic" aria-hidden="true"><use href="#i-help"/></svg> Hulp nodig?</summary>
+            <div class="help-body">
+              <p>Verschijnt de naam van je buur niet in de lijst? Vraag het schoolmailadres van je buur en typ het helemaal.</p>
+              <p>Staat de planning van je buur niet bij <span class="ui">Gedeeld met mij</span>? Je kreeg ook een e-mail met een link naar de planning.</p>
+            </div>
+          </details>
+          <p class="result"><svg class="ic" aria-hidden="true"><use href="#i-check-circle"/></svg><span><strong>Klaar als:</strong> jij de planning van je buur kan lezen, en de kolom <em>Als Kijker</em> ingevuld is.</span></p>
+        </div>
+        <footer class="card-nav">
+          <button class="btn" type="button" data-goto="1"><svg class="ic" aria-hidden="true"><use href="#i-left"/></svg> Stap 1</button>
+          <button class="btn btn-primary" type="button" data-goto="3">Stap 3 <svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></button>
+        </footer>
+      </article>
+    </section>
+
+    <!-- ===== STAP 3 ===== -->
+    <section class="pane" id="pane-3" aria-labelledby="h-3">
+      <article class="card">
+        <header class="card-head">
+          <div class="tags"><span class="tag tag-step">Stap 3</span><span class="tag tag-where"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg> Met je buur</span><span class="tag tag-where"><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg> Werkdocument, deel 1</span></div>
+          <h2 id="h-3">Reageerder</h2>
+        </header>
+        <div class="card-body">
+          <p class="intro">Een reageerder mag lezen en een reactie schrijven. Je maakt je buur reageerder. Je buur doet hetzelfde met jou.</p>
+          <div class="todo-box">
+            <h3><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg> Wat moet je doen?</h3>
+            <ol class="todo">
+              <li>Klik in je planning op <span class="ui">Delen</span>. Klik rechts van de naam van je buur op <span class="ui">Kijker</span>. Kies <span class="ui">Reageerder</span> en klik op <span class="ui">Opslaan</span>.</li>
+              <li>Open de planning van je buur. Selecteer de regel van 10.30 uur.</li>
+              <li>Klik op <span class="ui">Reactie toevoegen</span>. Typ een vraag, bijvoorbeeld <em>Kan dit om 11 uur?</em> Klik op <span class="ui">Invoegen</span>.</li>
+              <li>Probeer ook een regel te veranderen. Wat gebeurt er?</li>
+              <li>Vul in <strong>deel 1</strong> de kolom <em>Als Reageerder</em> in.</li>
+            </ol>
+            <figure class="shot" data-shot="stap3-reactie-toevoegen.png" data-caption="Reactie toevoegen: 1 in de werkbalk, of 2 naast de geselecteerde tekst" data-alt="De Leveringsplanning in Google Documenten. De regel van 10.30 uur is geselecteerd. Rode kaders bij Reactie toevoegen in de werkbalk en naast de tekst."></figure>
+          </div>
+          <div class="tip"><svg class="ic" aria-hidden="true"><use href="#i-bulb"/></svg><p><strong>Typt een reageerder in de tekst?</strong> Dan wordt het een voorstel (suggestie): gekleurd, met een vakje rechts. De tekst zelf verandert niet.</p></div>
+          <details class="help"><summary><svg class="ic" aria-hidden="true"><use href="#i-help"/></svg> Hulp nodig?</summary>
+            <div class="help-body">
+              <p>Zie je de rol niet? Klik op <span class="ui">Delen</span>. Onder <em>Personen met toegang</em> staat je buur, met rechts de rol en een pijl. Klik daarop. Zo ziet de keuzelijst eruit:</p>
+              <figure class="shot" data-shot="stap3-rollen.png" data-caption="De drie rollen: Kijker, Reageerder, Bewerker." data-alt="De keuzelijst met de rollen Kijker, Reageerder en Bewerker in een rood kader."></figure>
+              <p>Zie je geen <span class="ui">Opslaan</span>, maar <span class="ui">Klaar</span>? Klik dan op <span class="ui">Klaar</span>.</p>
+            </div>
+          </details>
+          <p class="result"><svg class="ic" aria-hidden="true"><use href="#i-check-circle"/></svg><span><strong>Klaar als:</strong> er een reactie van je buur in jouw planning staat, en de kolom <em>Als Reageerder</em> ingevuld is.</span></p>
+        </div>
+        <footer class="card-nav">
+          <button class="btn" type="button" data-goto="2"><svg class="ic" aria-hidden="true"><use href="#i-left"/></svg> Stap 2</button>
+          <button class="btn btn-primary" type="button" data-goto="4">Stap 4 <svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></button>
+        </footer>
+      </article>
+    </section>
+
+    <!-- ===== STAP 4 ===== -->
+    <section class="pane" id="pane-4" aria-labelledby="h-4">
+      <article class="card">
+        <header class="card-head">
+          <div class="tags"><span class="tag tag-step">Stap 4</span><span class="tag tag-where"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg> Met je buur</span><span class="tag tag-where"><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg> Werkdocument, deel 1 en 2</span></div>
+          <h2 id="h-4">Bewerker: een regel kwijt</h2>
+        </header>
+        <div class="card-body">
+          <p class="intro">Een bewerker mag alles veranderen, ook wissen. Jullie testen het. Daarna zet je je eigen planning terug.</p>
+          <div class="todo-box">
+            <h3><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg> Wat moet je doen?</h3>
+            <ol class="todo">
+              <li>Maak je buur <span class="ui">Bewerker</span>, zoals in stap 3: <span class="ui">Delen</span> › de rol › <span class="ui">Bewerker</span> › <span class="ui">Opslaan</span>.</li>
+              <li>Open de planning van je buur. Selecteer de regel van 10.30 uur en druk op <span class="key">Delete</span>.<span class="sub">Dat mag alleen in deze test. Je buur zet de regel zo terug.</span></li>
+              <li>Ga naar je eigen planning. Is de regel van 10.30 uur weg?</li>
+              <li>Klik rechtsboven op het <strong>klokje</strong>. Kies rechts een eerdere versie, waarin de regel er nog staat.</li>
+              <li>Klik op <span class="ui">Deze versie herstellen</span> en dan op <span class="ui">Herstellen</span>.</li>
+              <li>Vul de kolom <em>Als Bewerker</em> en <strong>deel 2</strong> in.</li>
+            </ol>
+            <figure class="shot" data-shot="stap4-versie-herstellen.png" data-caption="1 het klokje · 2 een eerdere versie · 3 Deze versie herstellen · 4 Herstellen" data-alt="Vier beelden uit Google Documenten: het klokje rechtsboven, de lijst met versies, de knop Deze versie herstellen en het venster met de knop Herstellen."></figure>
+          </div>
+          <div class="tip"><svg class="ic" aria-hidden="true"><use href="#i-bulb"/></svg><p><strong>Niets is echt weg.</strong> In de versiegeschiedenis staat elke vorige versie van je document.</p></div>
+          <details class="help"><summary><svg class="ic" aria-hidden="true"><use href="#i-help"/></svg> Hulp nodig?</summary>
+            <div class="help-body">
+              <p><strong>Welke versie?</strong> Klik op een versie: in het midden zie je hoe de planning er toen uitzag. Kies de versie waarin de regel van 10.30 uur er nog staat.</p>
+              <p>Zie je een vakje rond de datum van de versie? Druk op <span class="key">Esc</span> en klik naast de datum.</p>
+              <p>Terug naar je planning zonder iets te herstellen? Klik linksboven op de pijl.</p>
+            </div>
+          </details>
+          <p class="result"><svg class="ic" aria-hidden="true"><use href="#i-check-circle"/></svg><span><strong>Klaar als:</strong> de regel van 10.30 uur weer in jouw planning staat.</span></p>
+        </div>
+        <footer class="card-nav">
+          <button class="btn" type="button" data-goto="3"><svg class="ic" aria-hidden="true"><use href="#i-left"/></svg> Stap 3</button>
+          <button class="btn btn-primary" type="button" data-goto="5">Stap 5 <svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></button>
+        </footer>
+      </article>
+    </section>
+
+    <!-- ===== STAP 5 ===== -->
+    <section class="pane" id="pane-5" aria-labelledby="h-5">
+      <article class="card">
+        <header class="card-head">
+          <div class="tags"><span class="tag tag-step">Stap 5</span><span class="tag tag-where"><svg class="ic" aria-hidden="true"><use href="#i-folder"/></svg> Drive</span><span class="tag tag-where"><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg> Werkdocument, deel 3</span></div>
+          <h2 id="h-5">Je map delen</h2>
+        </header>
+        <div class="card-body">
+          <p class="intro">De test is klaar: je buur krijgt geen toegang meer. Daarna deel je je map NovaDepot met je leraar, als kijker.</p>
+          <div class="todo-box">
+            <h3><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg> Wat moet je doen?</h3>
+            <ol class="todo">
+              <li>Klik in je planning op <span class="ui">Delen</span>. Klik rechts van de naam van je buur op de rol › <span class="ui">Toegang verwijderen</span>. Klik op <span class="ui">Opslaan</span>.</li>
+              <li>Ga in Drive naar <span class="ui">Mijn Drive</span>. Klik met de rechtermuisknop op je map <strong>NovaDepot</strong> › <span class="ui">Delen</span> › <span class="ui">Delen</span>.</li>
+              <li>Typ het e-mailadres van je leraar. Het staat in je opdracht. Kies <span class="ui">Kijker</span> en klik op <span class="ui">Verzenden</span>.</li>
+              <li>Klik opnieuw op <span class="ui">Delen</span>. Staat onder <em>Algemene toegang</em> <span class="ui">Beperkt</span>? Klik op <span class="ui">Klaar</span>.</li>
+              <li>Vul <strong>deel 3</strong> van je werkdocument in.</li>
+            </ol>
+            <figure class="shot" data-shot="stap5-map-delen.png" data-caption="Rechtermuisknop op je map: 1 Delen · 2 Delen" data-alt="Het menu na een klik met de rechtermuisknop op de map NovaDepot. Rode kaders met de nummers 1 bij Delen en 2 bij Delen in het tweede menu."></figure>
+          </div>
+          <div class="tip"><svg class="ic" aria-hidden="true"><use href="#i-bulb"/></svg><p><strong>Waarom Kijker?</strong> Je leraar moet je map alleen bekijken. Geef zo weinig rechten als nodig.</p></div>
+          <details class="help"><summary><svg class="ic" aria-hidden="true"><use href="#i-help"/></svg> Hulp nodig?</summary>
+            <div class="help-body">
+              <p>Geen map NovaDepot? Die maakte je in les 06 en 07. Vraag je leraar om de kant-en-klare map uit les 07.</p>
+              <p>Zie je je buur nog onder <em>Personen met toegang</em>? Dan klikte je niet op <span class="ui">Opslaan</span>. Doe stap 1 opnieuw.</p>
+            </div>
+          </details>
+          <p class="result"><svg class="ic" aria-hidden="true"><use href="#i-check-circle"/></svg><span><strong>Klaar als:</strong> je buur niet meer bij je planning kan, en je leraar je map NovaDepot kan bekijken.</span></p>
+        </div>
+        <footer class="card-nav">
+          <button class="btn" type="button" data-goto="4"><svg class="ic" aria-hidden="true"><use href="#i-left"/></svg> Stap 4</button>
+          <button class="btn btn-primary" type="button" data-goto="6">Stap 6 <svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></button>
+        </footer>
+      </article>
+    </section>
+
+    <!-- ===== STAP 6 ===== -->
+    <section class="pane" id="pane-6" aria-labelledby="h-6">
+      <article class="card">
+        <header class="card-head">
+          <div class="tags"><span class="tag tag-step">Stap 6</span><span class="tag tag-where"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Opdracht</span></div>
+          <h2 id="h-6">Controleren en inleveren</h2>
+        </header>
+        <div class="card-body">
+          <p class="intro">Test of je het onthouden hebt. Er wordt niets bewaard. Lever daarna in.</p>
+
+          <div class="quiz">
+            <div class="quiz-q" data-ok="Juist. Lezen volstaat: geef zo weinig rechten als nodig." data-nok="Nog niet. Wat moet de chauffeur kunnen? Alleen lezen.">
+              <p>1. De chauffeur van Bakkerij Korstjes moet de planning lezen. Welke rol geef je?</p>
+              <div class="opts">
+                <button type="button" data-right>Kijker</button>
+                <button type="button">Reageerder</button>
+                <button type="button">Bewerker</button>
+              </div>
+              <p class="feedback" role="status"></p>
+            </div>
+            <div class="quiz-q" data-ok="Juist. In de versiegeschiedenis staat elke vorige versie." data-nok="Nog niet. Kijk nog eens naar stap 4.">
+              <p>2. Iemand wiste een regel in jouw planning. Hoe krijg je ze het snelst terug?</p>
+              <div class="opts">
+                <button type="button">Ik typ de hele planning opnieuw.</button>
+                <button type="button" data-right>Het klokje › een eerdere versie › Deze versie herstellen</button>
+                <button type="button">Ik vraag een nieuwe planning aan mijn leraar.</button>
+              </div>
+              <p class="feedback" role="status"></p>
+            </div>
+            <div class="quiz-q" data-ok="Juist. Alleen wie jij toevoegt, kan de planning openen." data-nok="Nog niet. Met de link kan iedereen ze openen, ook buiten de school.">
+              <p>3. Welke keuze bij <em>Algemene toegang</em> is veilig voor je planning?</p>
+              <div class="opts">
+                <button type="button" data-right>Beperkt</button>
+                <button type="button">Iedereen met de link</button>
+              </div>
+              <p class="feedback" role="status"></p>
+            </div>
+          </div>
+
+          <div class="todo-box">
+            <h3><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg> Wat moet je doen?</h3>
+            <ol class="todo">
+              <li>Loop de <strong>checklist</strong> na. Staat er nog iets open? Werk het eerst af.</li>
+              <li>Kijk of deel 1, 2 en 3 van je werkdocument ingevuld zijn.</li>
+              <li>Klik in je opdracht op <span class="ui">Inleveren</span>.<span class="sub">Classroom levert je werkdocument en je planning samen in.</span></li>
+            </ol>
+          </div>
+          <p class="result"><svg class="ic" aria-hidden="true"><use href="#i-check-circle"/></svg><span><strong>Klaar als:</strong> er bij de opdracht <em>Ingeleverd</em> staat.</span></p>
+        </div>
+        <footer class="card-nav">
+          <button class="btn" type="button" data-goto="5"><svg class="ic" aria-hidden="true"><use href="#i-left"/></svg> Stap 5</button>
+          <button class="btn btn-primary" type="button" data-goto="extra">Extra <svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></button>
+        </footer>
+      </article>
+    </section>
+
+    <!-- ===== EXTRA ===== -->
+    <section class="pane" id="pane-extra" aria-labelledby="h-extra">
+      <article class="card">
+        <header class="card-head">
+          <div class="tags"><span class="tag tag-extra">Extra · niet verplicht</span></div>
+          <h2 id="h-extra">Voor wie klaar is</h2>
+        </header>
+        <div class="card-body">
+          <p class="intro">Begin hier pas nadat je hebt ingeleverd. Klik in de opdracht op <span class="ui">Inleveren ongedaan maken</span>, doe de extra opdracht en lever opnieuw in.</p>
+          <div class="todo-box">
+            <h3><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg> Wat kan je doen?</h3>
+            <ol class="todo">
+              <li><strong>Een versie met een naam.</strong> Klik in je planning op het klokje. Klik naast de herstelde versie op de drie puntjes › <span class="ui">Deze versie een naam geven</span>. Typ bijvoorbeeld <em>Planning in orde</em>.</li>
+              <li><strong>Een reactie beantwoorden.</strong> Klik in je planning op de reactie van je buur. Klik op <span class="ui">Reageren</span>, typ je antwoord en klik op <span class="ui">Reageren</span>.</li>
+              <li>Schrijf bij <strong>Extra</strong> in je werkdocument wat je deed.</li>
+            </ol>
+          </div>
+        </div>
+        <footer class="card-nav">
+          <button class="btn" type="button" data-goto="6"><svg class="ic" aria-hidden="true"><use href="#i-left"/></svg> Stap 6</button>
+          <button class="btn" type="button" data-goto="start">Naar het begin</button>
+        </footer>
+      </article>
+    </section>
+  </main>
+
+  <!-- ============ RECHTS: de checklist ============ -->
+  <aside class="checklist leeg" id="checklist" aria-labelledby="h-cl">
+    <div class="cl-head">
+      <h2 id="h-cl">Checklist</h2>
+      <div class="cl-bar" role="progressbar" aria-label="Voortgang" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="cl-fill" id="clFill"></div></div>
+      <p class="cl-count" id="clCount">0 van 0 klaar</p>
+    </div>
+    <div class="cl-body">
+      <div class="cl-group" data-step="1"><h3>1 · Klaarzetten</h3>
+        <label class="cl-item"><input type="checkbox" id="c1a"><span>Werkdocument open, met mijn naam in de titel</span></label>
+        <label class="cl-item"><input type="checkbox" id="c1b"><span>Naam, klas en datum ingevuld</span></label>
+        <label class="cl-item"><input type="checkbox" id="c1c"><span>Leveringsplanning open</span></label>
+      </div>
+      <div class="cl-group" data-step="2"><h3>2 · Kijker</h3>
+        <label class="cl-item"><input type="checkbox" id="c2a"><span>Planning gedeeld met mijn buur, als Kijker</span></label>
+        <label class="cl-item"><input type="checkbox" id="c2b"><span>Algemene toegang: Beperkt</span></label>
+        <label class="cl-item"><input type="checkbox" id="c2c"><span>Planning van mijn buur geopend</span></label>
+        <label class="cl-item"><input type="checkbox" id="c2d"><span>Kolom Als Kijker ingevuld</span></label>
+      </div>
+      <div class="cl-group" data-step="3"><h3>3 · Reageerder</h3>
+        <label class="cl-item"><input type="checkbox" id="c3a"><span>Mijn buur is Reageerder</span></label>
+        <label class="cl-item"><input type="checkbox" id="c3b"><span>Een reactie geschreven</span></label>
+        <label class="cl-item"><input type="checkbox" id="c3c"><span>Kolom Als Reageerder ingevuld</span></label>
+      </div>
+      <div class="cl-group" data-step="4"><h3>4 · Bewerker</h3>
+        <label class="cl-item"><input type="checkbox" id="c4a"><span>Mijn buur is Bewerker</span></label>
+        <label class="cl-item"><input type="checkbox" id="c4b"><span>De regel van 10.30 uur teruggezet</span></label>
+        <label class="cl-item"><input type="checkbox" id="c4c"><span>Kolom Als Bewerker en deel 2 ingevuld</span></label>
+      </div>
+      <div class="cl-group" data-step="5"><h3>5 · Je map delen</h3>
+        <label class="cl-item"><input type="checkbox" id="c5a"><span>Toegang van mijn buur verwijderd</span></label>
+        <label class="cl-item"><input type="checkbox" id="c5b"><span>Map NovaDepot gedeeld met mijn leraar, als Kijker</span></label>
+        <label class="cl-item"><input type="checkbox" id="c5c"><span>Deel 3 ingevuld</span></label>
+      </div>
+      <div class="cl-group" data-step="6"><h3>6 · Controleren en inleveren</h3>
+        <label class="cl-item"><input type="checkbox" id="c6a"><span>Zelftest gedaan</span></label>
+        <label class="cl-item"><input type="checkbox" id="c6b"><span>Deel 1, 2 en 3 nagekeken</span></label>
+        <label class="cl-item"><input type="checkbox" id="c6c"><span>Ingeleverd</span></label>
+      </div>
+    </div>
+    <div class="cl-foot">
+      <button class="btn cl-toggle" type="button" id="clToggle" aria-expanded="false">Toon alles</button>
+      <button class="btn" type="button" id="btnReset">Vinkjes wissen</button>
+      <p class="cl-note">Je vinkjes staan alleen op deze computer. Er wordt niets doorgestuurd.</p>
+    </div>
+  </aside>
+</div>
+
+<!-- ============ Klaar! ============ -->
+<div class="klaar-overlay" id="klaar" role="dialog" aria-modal="true" aria-labelledby="h-klaar" hidden>
+  <div class="klaar-card">
+    <svg class="ic" aria-hidden="true"><use href="#i-check-circle"/></svg>
+    <h2 id="h-klaar">Je deelt met de juiste rechten!</h2>
+    <p>Alles is afgevinkt. Heb je nog tijd? Kijk dan bij <strong>Extra</strong>.</p>
+    <p>Volgende les maak je je account veilig: hoe maak je een wachtwoord dat niemand raadt?</p>
+    <button class="btn btn-primary" type="button" id="klaarSluit">Sluiten</button>
+  </div>
+</div>
+
+<footer class="site">
+  Toegepaste Informatica · GO! Dalton Gent · 2de graad Organisatie en logistiek · NovaDepot is een fictief bedrijf. Alle namen zijn verzonnen.
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

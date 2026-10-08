@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Delen met de juiste rechten · dia's · NovaDepot</title>
+  <link rel="icon" href="assets/novadepot-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/slides.css">
+  <style>
+    .mono { font-family: "Courier New", monospace; font-size: 25px; font-weight: 700; }
+    .qhead { font-size: 30px; font-weight: 700; margin: 0 0 6px; }
+    .qcol .opt { font-size: 25px; padding: 8px 16px; font-family: Arial, sans-serif; }
+    .qcol .opt .n { width: 46px; height: 46px; font-size: 24px; font-family: "Montserrat", Arial, sans-serif; }
+    .steps2 { columns: 2; column-gap: 40px; margin: 0; }
+    .steps2 li { font-size: 25px; margin-bottom: 6px; break-inside: avoid; }
+    .klok { font-size: 22px; color: #4D5573; }
+    .compact .two { flex: 0 0 auto; }
+    .compact .panel p { margin-bottom: 10px; }
+    .compact .panel p:last-child { margin-bottom: 0; }
+    .steps1 { margin: 0; padding-left: 1.2em; }
+    .steps1 li { font-size: 27px; margin-bottom: 14px; }
+    .steps1 li:last-child { margin-bottom: 0; }
+    /* Drie rollen (dia 4) */
+    .rollen { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 4px; }
+    .rol { background: #fff; border: 2px solid #D6D5CB; border-radius: 16px; padding: 22px 24px; min-height: 210px; }
+    .rol b { display: block; font-family: "Montserrat", Arial, sans-serif; font-size: 32px; color: var(--navy-deep); margin-bottom: 4px; }
+    .rol .vraag { font-size: 22px !important; color: var(--muted); margin: 0 0 12px; }
+    .rol .mag { font-size: 27px !important; font-weight: 700; color: var(--ok); margin: 0; }
+    /* De tabel met de rollen (dia 8) */
+    .rechten { width: 100%; border-collapse: collapse; background: #fff; border: 4px solid var(--navy); }
+    .rechten th, .rechten td { font-size: 27px; padding: 10px 18px; border-bottom: 2px solid var(--peri-soft); text-align: center; }
+    .rechten th:first-child, .rechten td:first-child { text-align: left; }
+    .rechten thead th { background: var(--peri-soft); color: var(--navy-deep); }
+    .rechten .a { display: none; font-weight: 700; }
+    .rechten .a.ja { color: var(--ok); }
+    .rechten .a.nee { color: var(--warn); }
+    .rechten .q { color: var(--muted); }
+    .slide.revealed .rechten .a { display: inline; }
+    .slide.revealed .rechten .q { display: none; }
+  </style>
+</head>
+<body>
+<div class="hud"><span id="counter"></span> · <kbd>→</kbd> verder · <kbd>F</kbd> volledig scherm · <kbd>N</kbd> notities</div>
+<div class="deck"><div class="stage">
+
+<!-- 1 -->
+<section class="slide title">
+  <p class="kicker" style="color:var(--blush)">Toegepaste Informatica · les 08</p>
+  <h1>Delen met de<br>juiste rechten</h1>
+  <p>Kijker, reageerder, bewerker · NovaDepot</p>
+  <div class="logos"><img src="assets/novadepot-logo.svg" alt="NovaDepot"><img src="assets/dalton-gent-logo.png" alt="GO! Dalton Gent"></div>
+  <template class="note"><p><strong>Lesstart (0–1').</strong> Laat de computers opstarten en aanmelden terwijl deze dia op het bord staat. Ga verder zodra de meesten aangemeld zijn.</p></template>
+</section>
+
+<!-- 2 -->
+<section class="slide" data-answer>
+  <p class="kicker">Lesstart · 3 minuten</p>
+  <h2>Weet je het nog?</h2>
+  <div class="qcol">
+    <p class="qhead">Welke naam hoort in het klassement van de facturen?</p>
+    <div class="opts">
+      <div class="opt"><span class="n">A</span>05-10-2026 Factuur - Zuivelhoeve De Melkkan.docx</div>
+      <div class="opt right"><span class="n">B</span>2026-0409 Factuur - Zuivelhoeve De Melkkan.docx</div>
+      <div class="opt"><span class="n">C</span>Factuur - Zuivelhoeve De Melkkan 2026-0409.docx</div>
+    </div>
+  </div>
+  <p class="answer">Het factuurnummer vooraan, dan de naam van les 06. Vandaag: wie mag in jouw documenten kijken?</p>
+  <template class="note">
+    <p><strong>Lesstart (3'), ophalen uit les 07.</strong> Iedereen antwoordt tegelijk met vingers: 1, 2 of 3 vingers voor A, B of C. Druk daarna op → voor het antwoord.</p>
+    <p>Wie A kiest: <em>"Dat is de datum van de factuur. Wat was de sleutel bij facturen?"</em> Wie C kiest: <em>"Waar moet de sleutel staan, zodat Drive de volgorde maakt?"</em></p>
+    <p>Begin met wat in deel 3 van les 07 het vaakst misliep, als dat iets anders was.</p>
+  </template>
+</section>
+
+<!-- 3 -->
+<section class="slide">
+  <p class="kicker">Ik doe · dia 1 van 4</p>
+  <h2>Wat kan je straks?</h2>
+  <ul class="rules">
+    <li>Je deelt een document als <strong>kijker</strong>, <strong>reageerder</strong> of <strong>bewerker</strong>.</li>
+    <li>Je kiest de rol die iemand nodig heeft: <strong>zo weinig als nodig</strong>.</li>
+    <li>Je zet een <strong>vorige versie</strong> terug als iemand iets wist.</li>
+    <li>Je deelt je map NovaDepot met je leraar.</li>
+  </ul>
+  <p class="klok" style="margin-top:6px">Ik leg 6 minuten uit. Daarna test je met je buur, met de lespagina.</p>
+  <template class="note"><p><strong>Ik doe, 0'30".</strong> Lesdoel voorlezen, niet toelichten. Zeg dat ze vandaag in duo werken: elk deelt de eigen Leveringsplanning met de buur.</p></template>
+</section>
+
+<!-- 4 -->
+<section class="slide">
+  <p class="kicker">Ik doe · dia 2 van 4</p>
+  <h2>Drie rollen</h2>
+  <div class="rollen">
+    <div class="rol"><b>Kijker</b><p class="vraag">Wat mag een kijker?</p><p class="mag reveal-item">lezen</p></div>
+    <div class="rol"><b>Reageerder</b><p class="vraag">Wat mag een reageerder?</p><p class="mag reveal-item">lezen<br>+ een reactie schrijven</p></div>
+    <div class="rol"><b>Bewerker</b><p class="vraag">Wat mag een bewerker?</p><p class="mag reveal-item">lezen<br>+ een reactie schrijven<br>+ zelf veranderen, ook wissen</p></div>
+  </div>
+  <p class="reveal-item" style="margin-top:22px;font-size:28px"><strong>Geef zo weinig rechten als nodig.</strong> Moet iemand alleen lezen? Dan is het Kijker.</p>
+  <template class="note">
+    <p><strong>Ik doe, 1'30". Eerst laten voorspellen.</strong> Vraag per rol: <em>"Wat denk je dat een kijker mag?"</em> Druk dan op →. Zo ook voor de reageerder en de bewerker; de laatste klik toont de regel onderaan.</p>
+    <p>Zeg: <em>"Straks test je het zelf, met je buur. Klopt wat je dacht?"</em> Deel 1 van het werkdocument is precies die test.</p>
+    <p>Eén zin over het waarom: <em>"Een bewerker kan alles wissen, en het document ook met anderen delen. Daarom geef je die rol niet zomaar."</em></p>
+  </template>
+</section>
+
+<!-- 5 -->
+<section class="slide compact">
+  <p class="kicker">Ik doe · dia 3 van 4 · demo</p>
+  <h2>Delen</h2>
+  <div class="panel">
+    <ol class="steps1">
+      <li>In je planning rechtsboven <span class="mono">Delen</span></li>
+      <li>Naam van je buur › <span class="mono">Kijker</span> › <span class="mono">Verzenden</span></li>
+      <li>Opnieuw <span class="mono">Delen</span>: onder <em>Algemene toegang</em> <span class="mono">Beperkt</span> › <span class="mono">Klaar</span></li>
+    </ol>
+  </div>
+  <p class="reveal-item" style="color:#A0372A;margin-top:18px"><strong>Nooit <em>Iedereen met de link</em>:</strong> dan kan iedereen met de link je planning openen, ook buiten de school.</p>
+  <template class="note">
+    <p><strong>Ik doe, 2' — hardop denkend voordoen</strong> in je eigen Leveringsplanning (klaarzetten: zie README, stap 2).</p>
+    <ol>
+      <li>Klik rechtsboven op Delen. Zeg: <em>"Hier typ ik de naam van mijn buur. Ik kies in de lijst het juiste schoolaccount."</em></li>
+      <li>Klik rechts op de rol: toon de keuzelijst Kijker, Reageerder, Bewerker. Kies Kijker. <em>"Ik klik nu op Verzenden."</em> Wil je met niemand delen, klik dan op Annuleren.</li>
+      <li>Toon onder <em>Algemene toegang</em> de keuze Beperkt / Iedereen met de link. <em>"Beperkt: alleen wie ik toevoeg."</em></li>
+    </ol>
+    <p>Druk op → voor de waarschuwing. Zeg erbij waar de planning van je buur staat: in Drive, links <em>Gedeeld met mij</em>.</p>
+  </template>
+</section>
+
+<!-- 6 -->
+<section class="slide compact">
+  <p class="kicker">Ik doe · dia 4 van 4 · demo</p>
+  <h2>Een regel terug</h2>
+  <div class="panel">
+    <ol class="steps1">
+      <li>Rechtsboven het <strong>klokje</strong> (<em>Laatste bewerking</em>)</li>
+      <li>Rechts een <strong>eerdere versie</strong> kiezen: de regel staat er nog</li>
+      <li><span class="mono">Deze versie herstellen</span> › <span class="mono">Herstellen</span></li>
+    </ol>
+  </div>
+  <p class="reveal-item" style="color:var(--ok);margin-top:18px"><strong>Niets is echt weg.</strong> In de versiegeschiedenis staat elke vorige versie.</p>
+  <template class="note">
+    <p><strong>Ik doe, 1'30" — hardop denkend voordoen</strong> in je eigen Leveringsplanning.</p>
+    <ol>
+      <li>Selecteer de regel van 10.30 uur en druk op Delete. <em>"Stel: mijn buur heeft dit gedaan."</em></li>
+      <li>Klik rechtsboven op het klokje. <em>"Hier staat elke versie, met wie ze maakte en wanneer."</em> Klik op de vorige versie: in het midden staat de regel er nog.</li>
+      <li>Klik op Deze versie herstellen en dan op Herstellen. Toon dat de regel terug is.</li>
+    </ol>
+    <p>Druk op → voor de zin onderaan. <strong>Stap 3 (een reactie) doe je niet voor:</strong> de lespagina toont het met een schermafbeelding. Ga meteen door naar <em>Zo werk je verder</em>.</p>
+  </template>
+</section>
+
+<!-- 7 -->
+<section class="slide compact">
+  <p class="kicker">Keuzewerktijd · 40 minuten</p>
+  <h2>Zo werk je verder</h2>
+  <div class="two" style="grid-template-columns: 1.6fr 1fr">
+    <div>
+      <ol class="steps2">
+        <li>Klaarzetten <span class="klok">3'</span></li>
+        <li>Kijker <span class="klok">8'</span></li>
+        <li>Reageerder <span class="klok">6'</span></li>
+        <li>Bewerker <span class="klok">9'</span></li>
+        <li>Je map delen <span class="klok">7'</span></li>
+        <li>Controleren en inleveren <span class="klok">7'</span></li>
+      </ol>
+    </div>
+    <div class="panel navy">
+      <p style="font-size:25px"><strong>Vast?</strong></p>
+      <p style="font-size:26px">1. Theoriekaart<br>2. Hulp nodig?<br>3. Je buur &nbsp; 4. Ik</p>
+      <p style="margin-top:14px;font-size:22px">Vink af in de <strong>checklist</strong>.</p>
+    </div>
+  </div>
+  <p class="klok" style="margin-top:18px;font-size:25px">
+    <strong>Alles staat in de opdracht in Google Classroom</strong> <em>Werkplek 3 — Delen met de juiste rechten</em>: de lespagina, je werkdocument, je Leveringsplanning en het e-mailadres van je leraar.
+    Je levert je <strong>werkdocument</strong> en je <strong>planning</strong> in.<br>Adres: jonasdaltongent.github.io/Delen-NovaDepot/<!-- PAS AAN --></p>
+  <template class="note">
+    <p><strong>Keuzewerktijd, 40'.</strong> Laat deze dia staan zolang ze werken. De minuten per stap tellen samen op tot 40, inleveren inbegrepen.</p>
+    <p>Eerste rondgang: heeft iedereen een buur (of een groepje van drie)? Delen ze met het juiste schoolaccount, en staat <em>Algemene toegang</em> op <em>Beperkt</em>?</p>
+    <p>Tweede rondgang, rond stap 4: lukt het terugzetten? Laat uitleggen welke versie ze kiezen, en waarom. Rond stap 5: is de buur verwijderd, en is de map gedeeld met jou als kijker? Je krijgt dan een e-mail.</p>
+    <p><strong>Vergeet niet</strong> het adres op deze dia aan te passen als de repository anders heet.</p>
+  </template>
+</section>
+
+<!-- 8 -->
+<section class="slide" data-answer>
+  <p class="kicker">Afsluiten · laatste minuut</p>
+  <h2>Wie mag wat?</h2>
+  <table class="rechten">
+    <thead><tr><th></th><th>lezen</th><th>reageren</th><th>veranderen</th></tr></thead>
+    <tbody>
+      <tr><td>Kijker</td><td><span class="q">?</span><span class="a ja">ja</span></td><td><span class="q">?</span><span class="a nee">nee</span></td><td><span class="q">?</span><span class="a nee">nee</span></td></tr>
+      <tr><td>Reageerder</td><td><span class="q">?</span><span class="a ja">ja</span></td><td><span class="q">?</span><span class="a ja">ja</span></td><td><span class="q">?</span><span class="a nee">nee</span></td></tr>
+      <tr><td>Bewerker</td><td><span class="q">?</span><span class="a ja">ja</span></td><td><span class="q">?</span><span class="a ja">ja</span></td><td><span class="q">?</span><span class="a ja">ja</span></td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top:24px">Volgende les: <strong>een veilig account</strong>. Hoe maak je een wachtwoord dat niemand raadt?</p>
+  <template class="note">
+    <p><strong>Afsluiting, laatste minuut van de keuzewerktijd.</strong> Laat de tabel mondeling invullen, rij per rij. Druk dan op → voor de antwoorden.</p>
+    <p>Wie zegt dat een reageerder kan veranderen: <em>"Wat gebeurde er als je typte? Een voorstel, geen echte verandering."</em></p>
+    <p>Zeg mondeling dat wie niet klaar is, toch inlevert, en dat de toegang van de buur eerst weg moet.</p>
+    <p>Kijk na de les in je e-mail: van wie kreeg je de map NovaDepot? Daar zie je meteen of het klassement van les 07 klopt.</p>
+  </template>
+</section>
+
+</div></div>
+<div class="notes" id="notes"></div>
+<script src="js/slides.js"></script>
+</body>
+</html>

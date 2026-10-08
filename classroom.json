@@ -1,0 +1,33 @@
+{
+  "_uitleg": "Wordt gelezen door _tools/zet_opdracht_klaar.py (zie _tools/CLASSROOM-KOPPELING.md). Dit bestand staat openbaar op GitHub: zet hier nooit een e-mailadres of wachtwoord in. {email} en {deadline} vult het script zelf in; de deadline komt uit lesdoelen.json.",
+  "titel": "Werkplek 3 — Delen met de juiste rechten",
+  "onderwerp": "Digitale competenties",
+  "klassen": [
+    "3ORLO",
+    "4ORLOa",
+    "4ORLOb"
+  ],
+  "punten": 20,
+  "instructie": [
+    "1. Open de lespagina (link), je werkdocument WP3_Delen-met-de-juiste-rechten en je Leveringsplanning.",
+    "2. Je werkt samen met je buur: elk deelt de eigen Leveringsplanning.",
+    "3. Het e-mailadres van je leraar, voor stap 5: {email}",
+    "4. Klik op Inleveren, ten laatste {deadline}. Je werkdocument en je planning gaan samen mee."
+  ],
+  "bijlagen": [
+    {
+      "soort": "link",
+      "url": "https://jonasdaltongent.github.io/Delen-NovaDepot/"
+    },
+    {
+      "soort": "kopie",
+      "bestand": "werkdocument/WP3_Delen-met-de-juiste-rechten.docx",
+      "naam": "WP3_Delen-met-de-juiste-rechten"
+    },
+    {
+      "soort": "kopie",
+      "bestand": "werkdocument/Leveringsplanning.docx",
+      "naam": "Leveringsplanning"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "lesid": "novadepot-delen",
+  "lesnr": "08",
+  "titel": "Werkplek 3 - Delen met de juiste rechten (delen en versies)",
+  "week": 7,
+  "schooljaar": "2026-2027",
+  "datum": "2026-10-14",
+  "_opmerking_datum": "Uur 2 van de week: 3ORLO wo 14 okt (2de uur), 4ORLOb wo 14 okt (3de uur), 4ORLOa do 15 okt (7de uur).",
+  "klasgroepen": [
+    "ORLO"
+  ],
+  "_opmerking_klasgroepen": "De klasgroepcode moet 'ORLO' zijn: daarmee telt het blad 'ORLO' de regels op. De echte klasnamen staan hieronder.",
+  "klasnaam": "3ORLO, 4ORLOa, 4ORLOb",
+  "finaliteit": "arbeidsmarktgerichte finaliteit",
+  "lesduur_minuten": 50,
+  "evaluatie": "formatief",
+  "deadline": "2026-10-16T20:00",
+  "bron": "https://github.com/jonasdaltongent/Delen-NovaDepot",
+  "_opmerking_bron": "Nog niet gepubliceerd. Pas dit aan als de repository anders heet.",
+  "doelen": [
+    {
+      "code": "BV2_04.03",
+      "rol": "kern"
+    },
+    {
+      "code": "BV2_04.04",
+      "rol": "ondersteunend"
+    },
+    {
+      "code": "BV2_05.01",
+      "rol": "ondersteunend"
+    }
+  ]
+}
