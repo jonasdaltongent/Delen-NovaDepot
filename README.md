@@ -247,3 +247,6 @@ De repository krijgt dezelfde `pre-push` hook als de andere lessen (`_tools/upda
 5. **Les 07 gemist?** Zonder map NovaDepot kan stap 5 niet. De kant-en-klare map hangt aan de opdracht van les 07
    (`NovaDepot.zip`).
 6. **4ORLOa** heeft les 08 op donderdag (7de uur): tot de deadline op vrijdag blijft er weinig tijd.
+7. **Nieuw sinds 09-10-2026, voor alle klassen**: de vaste startdia *Zo start je* (dia 1) en de startpagina met
+   *Wat heb je nodig?* in beelden en *Vast?* als rij. Geraken de leerlingen zo zonder hulp tot bij de opdracht,
+   de lespagina en het werkdocument? (`_afspraken/presentatie.md`, `_afspraken/lespagina.md`)

@@ -7,7 +7,7 @@
   <link rel="icon" href="assets/novadepot-icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body data-storage="novadepot_delen_v1_" data-laatste-stap="6">
+<body data-storage="novadepot_delen_v1_" data-laatste-stap="6" data-ai-hulp="uit">
 
 <!-- Pictogrammen: eenvoudige lijntekeningen, eigen werk. Gebruik: een svg met class "ic" en daarin use met href naar het symbool. -->
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
@@ -19,7 +19,6 @@
   <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></symbol>
   <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3.5l9.5 17h-19z"/><path d="M12 10v4.5M12 17.5h.01"/></symbol>
   <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.4 2.5c-.6.3-1 .8-1 1.5v.4M12 17h.01"/></symbol>
-  <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></symbol>
   <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5H9l2 2h8.5A1.5 1.5 0 0 1 21 8.5v10a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 18.5z"/></symbol>
   <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></symbol>
   <symbol id="i-send" viewBox="0 0 24 24"><path d="M12 15V3M7 8l5-5 5 5"/><path d="M4 14v6h16v-6"/></symbol>
@@ -30,6 +29,9 @@
   <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
   <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
   <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9l-5.2 2.8 1-5.9-4.3-4.1 5.9-.8z"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></symbol>
+  <symbol id="i-hand" viewBox="0 0 24 24"><path d="M8 12V6a1.5 1.5 0 0 1 3 0v5"/><path d="M11 10.5V4.5a1.5 1.5 0 0 1 3 0v6"/><path d="M14 10.5V6a1.5 1.5 0 0 1 3 0v7.5"/><path d="M8 11.5l-1.5-1.5a1.6 1.6 0 0 0-2.3 2.3l3.6 4.2A6.5 6.5 0 0 0 17 13.5"/></symbol>
   <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
   <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
 </svg>
@@ -80,12 +82,47 @@
         <div class="card-body">
           <p class="intro">Tom Peeters maakte de leveringsplanning van dinsdag. Wie mag ze lezen? Wie mag een opmerking geven? Wie mag ze veranderen? Je test het met je buur. Daarna deel je je map NovaDepot met je leraar.</p>
 
-          <h2 class="sec">Zo werk je</h2>
-          <div class="werkwijze">
-            <div class="werk-tegel"><svg class="ic" aria-hidden="true"><use href="#i-monitor"/></svg><strong>Lees hier</strong><span>Op deze pagina staat wat je moet doen, stap voor stap.</span></div>
-            <div class="werk-tegel"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg><strong>Test met je buur</strong><span>Elk deelt de eigen Leveringsplanning met de ander.</span></div>
-            <div class="werk-tegel inleveren"><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg><strong>Schrijf in je werkdocument</strong><span>Dat lever je in, samen met je planning.</span></div>
-          </div>
+          <h2 class="sec">Wat heb je nodig?</h2>
+          <ol class="nodig vier">
+            <li class="nodig-item">
+              <div class="mock mock-opdracht" aria-hidden="true">
+                <div class="mo-titel">Werkplek 3 — Delen met de juiste rechten</div>
+                <div class="mo-chip"><svg class="ic"><use href="#i-link"/></svg><span>Les 08 · Delen met de juiste rechten</span></div>
+                <div class="mo-chip"><svg class="ic"><use href="#i-doc"/></svg><span>WP3_Delen-met-de-juiste-rechten</span></div>
+                <div class="mo-knop">Inleveren</div>
+              </div>
+              <p class="nodig-naam">De opdracht in Google Classroom</p>
+              <p class="nodig-uitleg">Hier begin je. Hier lever je in.</p>
+            </li>
+            <li class="nodig-item">
+              <div class="mock mock-lespagina" aria-hidden="true">
+                <div class="ml-balk"></div>
+                <div class="ml-midden">
+                  <div class="ml-route"><span></span><span></span><span></span><span></span></div>
+                  <div class="ml-stap"><span class="ml-tag">Stap 1</span><span class="ml-lijn"></span><span class="ml-lijn kort"></span><span class="ml-lijn"></span></div>
+                </div>
+                <div class="ml-hier">Je bent hier</div>
+              </div>
+              <p class="nodig-naam">Deze lespagina</p>
+              <p class="nodig-uitleg">Hier lees je wat je moet doen, stap voor stap.</p>
+            </li>
+            <li class="nodig-item">
+              <div class="mock mock-werkdocument" aria-hidden="true">
+                <div class="mw-balk"><svg class="ic"><use href="#i-doc"/></svg>Leveringsplanning</div>
+                <div class="mw-blad"><div class="mw-rijen"><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+              </div>
+              <p class="nodig-naam">Je Leveringsplanning</p>
+              <p class="nodig-uitleg">Die deel je met je buur. Ze gaat mee in.</p>
+            </li>
+            <li class="nodig-item inleveren">
+              <div class="mock mock-werkdocument" aria-hidden="true">
+                <div class="mw-balk"><svg class="ic"><use href="#i-doc"/></svg>WP3_Delen-met-de-juiste-rechten</div>
+                <div class="mw-blad"><div class="mw-tekst"><span></span><span></span><span class="kort"></span><span></span><span class="kort"></span></div></div>
+              </div>
+              <p class="nodig-naam">Je werkdocument WP3</p>
+              <p class="nodig-uitleg">Hier schrijf je. Dit lever je in.</p>
+            </li>
+          </ol>
 
           <h2 class="sec">Na deze les kan je</h2>
           <ul class="doelen">
@@ -94,7 +131,14 @@
             <li>een vorige versie terugzetten als iemand iets wist.</li>
           </ul>
 
-          <div class="tip"><svg class="ic" aria-hidden="true"><use href="#i-bulb"/></svg><p><strong>Vast?</strong> Kijk eerst op de theoriekaart. Open dan <em>Hulp nodig?</em> onder de stap. Vraag het daarna aan je buur, en pas dan aan je leraar.</p></div>
+          <h2 class="sec">Vast? Probeer het in deze volgorde</h2>
+          <ol class="vast">
+            <li><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg><span>Theoriekaart</span></li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-help"/></svg><span><em>Hulp nodig?</em> onder de stap</span></li>
+            <li class="ai-hulp"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg><span>AI-hulp in de opdracht</span></li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg><span>Je buur</span></li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-hand"/></svg><span>Je leraar</span></li>
+          </ol>
 
           <p class="start-cta"><button class="btn btn-primary" type="button" data-goto="1">Start met stap 1 <svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></button></p>
         </div>
@@ -127,6 +171,14 @@
               <p>Een bewerker kan alles veranderen, en het document ook met anderen delen.</p>
             </section>
 
+            <section class="t-card ai-hulp">
+              <h3><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg>Slim met de AI-hulp</h3>
+              <ol class="t-delen">
+                <li>Typ geen namen of persoonlijke gegevens.</li>
+                <li>De AI-hulp kent alleen deze les.</li>
+                <li>Controleer het antwoord: klik op het nummertje, of kijk in de stap.</li>
+              </ol>
+            </section>
             <section class="t-card wide">
               <h3><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg>Drie rollen</h3>
               <table class="t-rows">

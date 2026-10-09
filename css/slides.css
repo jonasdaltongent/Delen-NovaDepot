@@ -77,6 +77,49 @@ html, body { margin: 0; height: 100%; background: #1D2340; font-family: "Atkinso
 .help-row div { flex: 1; background: #fff; border-radius: 14px; padding: 14px 16px; font-size: 24px; font-weight: 700; text-align: center; border: 2px solid var(--peri); }
 .help-row b { display: block; font-family: "Montserrat", Arial, sans-serif; font-size: 34px; color: var(--navy); }
 
+/* ---------- Vaste startdia "Zo start je" (dia 1, sinds 09-10-2026, _afspraken/presentatie.md) ----------
+   Zeven tegels met een tekening (HTML en CSS) en een achtste "Klaar?". Alleen de lestitel, de
+   lesgroep en de titel van de opdracht veranderen per les. Geen wachtwoord op de dia: ze is openbaar. */
+.slide.start { padding: 40px 64px 52px; }
+.start-kop { display: flex; align-items: flex-end; justify-content: space-between; gap: 28px; margin-bottom: 26px; }
+.start-kop .kicker { margin: 0 0 6px; }
+.start-kop h1 { font-size: 40px; margin: 0; }
+.start-zo { font-family: "Montserrat", Arial, sans-serif; font-weight: 900; font-size: 30px; color: #fff; background: var(--navy); border-radius: 12px; padding: 6px 20px; white-space: nowrap; }
+.startroute { list-style: none; counter-reset: sr; margin: 0; padding: 0 !important; display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 1fr; gap: 24px 22px; flex: 1; min-height: 0; }
+.startroute li { counter-increment: sr; position: relative; margin: 0; background: #fff; border: 2px solid #D6D5CB; border-radius: 16px; padding: 14px 16px 12px; display: flex; flex-direction: column; gap: 10px; font-size: 22px; line-height: 1.25; font-weight: 700; }
+.startroute li::before { content: counter(sr); position: absolute; top: -16px; left: -14px; width: 44px; height: 44px; border-radius: 50%; background: var(--navy); color: #fff; font-family: "Montserrat", Arial, sans-serif; font-weight: 900; font-size: 24px; display: grid; place-items: center; box-shadow: 0 0 0 4px var(--sand); }
+.startroute li.klaar { background: var(--navy); border-color: var(--navy); color: #fff; justify-content: center; font-size: 26px; }
+.startroute li.klaar::before { content: "✓"; background: var(--ok); }
+.sr-tekst { display: block; }
+.startroute .knop { font-family: Arial, sans-serif; background: var(--peri-soft); color: var(--navy-deep); border-radius: 6px; padding: 0 6px; white-space: nowrap; }
+.sr-beeld { height: 96px; flex-shrink: 0; border-radius: 10px; background: #F1F3F4; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; overflow: hidden; font-family: Arial, sans-serif; font-weight: 400; }
+/* 1 · de computer */
+.pc-scherm { width: 150px; height: 74px; border: 5px solid var(--navy-deep); border-radius: 6px; background: var(--navy); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; }
+.pc-avatar { width: 22px; height: 22px; border-radius: 50%; background: var(--peri); }
+.pc-veld { width: 92px; height: 16px; border-radius: 3px; background: #fff; color: #5F6368; font-size: 12px; line-height: 16px; text-align: center; letter-spacing: 2px; }
+.pc-voet { width: 44px; height: 9px; margin-top: -8px; background: var(--navy-deep); border-radius: 0 0 4px 4px; }
+/* 2 · de adresbalk */
+.url-balk { background: #fff; border: 1px solid #DADCE0; border-radius: 99px; padding: 4px 16px; font-size: 17px; color: #202124; }
+.url-knop, .opdr-link { background: #1A73E8; color: #fff; border-radius: 6px; padding: 3px 14px; font-size: 15px; font-weight: 700; }
+/* 3 · aanmelden */
+.login-veld { width: 200px; background: #fff; border: 1px solid #DADCE0; border-radius: 6px; padding: 4px 10px; font-size: 15px; color: #5F6368; }
+.login-veld b { color: #202124; }
+/* 4 · de lesgroep */
+.lesgroep { width: 200px; height: 84px; border-radius: 8px; background: #fff; border: 1px solid #DADCE0; overflow: hidden; }
+.lesgroep-kop { display: block; height: 52px; background: #137333; color: #fff; font-size: 16px; font-weight: 700; padding: 8px 10px; }
+/* 5 · de tabbladen */
+.tabs { display: flex; align-items: flex-end; gap: 16px; background: #fff; border-bottom: 1px solid #DADCE0; padding: 10px 14px 0; border-radius: 8px 8px 0 0; }
+.tab-grijs { width: 46px; height: 10px; margin-bottom: 12px; border-radius: 5px; background: #DADCE0; }
+.tab-aan { font-size: 17px; font-weight: 700; color: #137333; border-bottom: 4px solid #137333; padding: 0 2px 6px; }
+/* 6 · de opdracht */
+.opdr-rij { display: flex; align-items: center; gap: 8px; width: 92%; background: #fff; border: 1px solid #DADCE0; border-radius: 8px; padding: 5px 8px; font-size: 13px; color: #202124; }
+.opdr-ic { width: 22px; height: 22px; flex-shrink: 0; border-radius: 50%; background: #137333; }
+/* 7 · de bijlagen */
+.bijl-chip { width: 88%; display: flex; align-items: center; gap: 8px; background: #fff; border: 1px solid #DADCE0; border-radius: 8px; padding: 4px 10px; font-size: 15px; color: #5F6368; }
+.bijl-chip.aan { border: 3px solid var(--ok); color: #202124; font-weight: 700; }
+.bijl-ic { width: 18px; height: 18px; flex-shrink: 0; border-radius: 4px; background: var(--peri); }
+.bijl-chip.aan .bijl-ic { background: var(--navy); }
+
 /* sprekersnotities */
 .notes { display: none; position: fixed; left: 0; right: 0; bottom: 0; max-height: 38vh; overflow: auto; background: #fff; border-top: 5px solid var(--blush); padding: 14px 22px; font-size: 17px; line-height: 1.5; z-index: 5; }
 body.show-notes .notes { display: block; }

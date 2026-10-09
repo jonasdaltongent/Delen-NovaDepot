@@ -303,6 +303,105 @@ body.teacher .teacher-banner { display: block; background: #7A2E22; color: #fff;
 footer.site { max-width: 1440px; margin: 0 auto; padding: 0 1.2rem 2rem; font-size: .85rem; color: var(--muted); }
 
 /* ==========================================================================
+   Startpagina: "Wat heb je nodig?" in beelden (sinds 09-10-2026, _afspraken/lespagina.md)
+   De beelden zijn tekeningen in HTML en CSS, geen schermafbeeldingen.
+   ========================================================================== */
+.nodig { list-style: none; counter-reset: nodig; margin: .2rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.6rem; }
+.nodig-item { counter-increment: nodig; position: relative; display: flex; flex-direction: column; }
+.nodig-item::before { content: counter(nodig); position: absolute; top: -.55rem; left: -.55rem; z-index: 1; width: 1.8rem; height: 1.8rem; border-radius: 50%; background: var(--navy); color: #fff; font-weight: 700; font-size: .95rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 3px #fff; }
+.nodig-item.inleveren::before { background: var(--ok); }
+.nodig-item + .nodig-item::after { content: "→"; position: absolute; left: -1.3rem; top: 3.4rem; color: var(--navy); font-size: 1.2rem; font-weight: 700; line-height: 1; }
+.nodig-naam { font-weight: 700; color: var(--navy-deep); margin: .65rem 0 .1rem; line-height: 1.3; }
+.nodig-uitleg { font-size: .93rem; color: var(--muted); margin: 0; }
+.nodig-item.inleveren .nodig-uitleg { color: var(--ok); font-weight: 700; }
+.nodig-noot { font-size: .92rem; color: var(--muted); margin: 1rem 0 0; }
+
+.mock { height: 136px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: #fff; overflow: hidden; position: relative; font-family: Arial, Helvetica, sans-serif; box-shadow: 0 2px 8px rgba(29, 35, 64, .07); }
+.mock .ic { width: .95rem; height: .95rem; }
+/* de opdracht in Classroom */
+.mock-opdracht { padding: .65rem .75rem .65rem 1.45rem; display: flex; flex-direction: column; gap: .38rem; }
+.mo-titel { font-size: .78rem; font-weight: 700; color: #137333; line-height: 1.25; border-bottom: 2px solid #137333; padding-bottom: .3rem; }
+.mo-chip { display: flex; align-items: center; gap: .35rem; width: 72%; font-size: .72rem; color: #3C4043; border: 1px solid #DADCE0; border-radius: 6px; padding: .12rem .4rem; }
+.mo-chip .ic { color: var(--navy); }
+.mo-knop { position: absolute; right: .6rem; bottom: .6rem; font-size: .72rem; font-weight: 700; color: #fff; background: #137333; border-radius: 5px; padding: .15rem .55rem; }
+/* deze lespagina */
+.mock-lespagina { background: var(--bg); }
+.ml-balk { height: 16px; background: #fff; border-bottom: 1px solid var(--line); }
+.ml-midden { display: flex; gap: .4rem; padding: .45rem; height: calc(100% - 16px); }
+.ml-route { width: 22%; background: #fff; border-radius: 6px; display: flex; flex-direction: column; gap: .32rem; padding: .4rem; }
+.ml-route span { width: .7rem; height: .7rem; border-radius: 50%; background: #ECEDF3; }
+.ml-route span:first-child { background: var(--navy); }
+.ml-stap { flex: 1; background: #fff; border-radius: 6px; padding: .45rem .55rem; display: flex; flex-direction: column; gap: .32rem; }
+.ml-tag { align-self: flex-start; font-size: .62rem; font-weight: 700; color: #fff; background: var(--navy); border-radius: 99px; padding: 0 .45rem; }
+.ml-lijn { height: 6px; border-radius: 3px; background: #E1E3EC; }
+.ml-lijn.kort { width: 60%; }
+.ml-hier { position: absolute; right: .55rem; bottom: .5rem; font-size: .68rem; font-weight: 700; color: var(--warn); background: var(--blush); border-radius: 99px; padding: .05rem .5rem; }
+/* het werkdocument */
+.mock-werkdocument { background: #F1F3F4; }
+.mw-balk { display: flex; align-items: center; gap: .3rem; height: 22px; background: #fff; border-bottom: 1px solid #DADCE0; font-size: .7rem; font-weight: 700; color: #3C4043; padding: 0 .45rem 0 1.45rem; white-space: nowrap; overflow: hidden; }
+.mw-balk .ic { color: #1A73E8; }
+.mw-blad { margin: .45rem auto 0; width: 84%; height: 100%; background: #fff; box-shadow: 0 1px 3px rgba(0, 0, 0, .15); padding: .45rem; }
+.mw-venster { border: 1px solid #9AA0A6; border-radius: 3px; font-size: .6rem; color: #5F6368; }
+.mw-kop { background: #F2F6FC; color: #202124; font-weight: 700; padding: .08rem .3rem; }
+.mw-veld { border-bottom: 1px solid #DADCE0; padding: .02rem .3rem; }
+.mw-tekst { padding: .3rem; display: flex; flex-direction: column; gap: .22rem; }
+.mw-tekst span { height: 4px; border-radius: 2px; background: #E1E3EC; }
+.mw-tekst span.kort { width: 55%; }
+
+/* vier beelden (een les met een werkplek naast het werkdocument, zoals Drive) */
+.nodig.vier { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.3rem; }
+.nodig.vier .nodig-item + .nodig-item::after { left: -1.15rem; }
+.nodig.vier .mo-titel { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nodig.vier .mo-chip { width: 84%; }
+.mo-chip span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* een map in Drive */
+.mock-drive { background: #fff; }
+.md-balk { display: flex; align-items: center; height: 24px; padding: 0 .5rem 0 1.45rem; border-bottom: 1px solid #DADCE0; font-size: .68rem; color: #3C4043; white-space: nowrap; overflow: hidden; }
+.md-rij { display: flex; align-items: center; gap: .35rem; padding: .28rem .6rem; border-bottom: 1px solid #F1F3F4; font-size: .7rem; color: #3C4043; }
+.md-rij .ic { color: #5F6368; }
+/* een document met een tabel */
+.mw-rijen { display: grid; grid-template-columns: 1fr 2fr; border-top: 1px solid #DADCE0; border-left: 1px solid #DADCE0; }
+.mw-rijen span { height: 13px; border-right: 1px solid #DADCE0; border-bottom: 1px solid #DADCE0; }
+
+/* "Vast?": een rij genummerde stapjes; een verborgen stapje telt niet mee */
+.vast { list-style: none; counter-reset: vast; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .55rem 1.5rem; align-items: center; }
+.vast li { counter-increment: vast; position: relative; display: inline-flex; align-items: center; gap: .45rem; background: #FAFAFD; border: 1px solid var(--line); border-radius: 99px; padding: .3rem .85rem .3rem .35rem; font-size: .93rem; line-height: 1.3; }
+.vast li::before { content: counter(vast); width: 1.45rem; height: 1.45rem; flex-shrink: 0; border-radius: 50%; background: var(--navy); color: #fff; font-weight: 700; font-size: .78rem; display: inline-flex; align-items: center; justify-content: center; }
+.vast li .ic { color: var(--navy); }
+.vast li + li::after { content: "›"; position: absolute; left: -1.05rem; color: var(--navy); font-weight: 700; }
+
+/* AI-hulp (_afspraken/ai-hulp.md): alleen zichtbaar met <body data-ai-hulp="aan"> */
+body:not([data-ai-hulp="aan"]) .ai-hulp { display: none !important; }
+
+/* genummerde lijst op een kaartje van de theoriekaart */
+.t-delen { margin: 0; padding-left: 1.2rem; }
+.t-delen li { margin-bottom: .25rem; }
+
+/* ==========================================================================
+   E-mail (MW les 3; ook bruikbaar voor de andere e-maillessen)
+   ========================================================================== */
+/* een nagemaakt venster "Nieuw bericht" */
+.mail { max-width: 640px; margin: 0 0 1.2rem; border: 1px solid #C4C7C5; border-radius: 10px 10px 6px 6px; overflow: hidden; background: #fff; font-family: Arial, Helvetica, sans-serif; font-size: .95rem; color: #202124; box-shadow: 0 4px 14px rgba(29, 35, 64, .1); }
+.mail-kop { background: #F2F6FC; font-weight: 700; font-size: .92rem; padding: .5rem .9rem; }
+.mail-veld { display: flex; gap: .7rem; padding: .45rem .9rem; border-bottom: 1px solid #E3E3E3; overflow-wrap: anywhere; }
+.mail-lbl { color: #5F6368; min-width: 5.4rem; }
+.mail-leeg { color: var(--warn); font-style: italic; }
+.mail-tekst { padding: .8rem .9rem .3rem; }
+.mail-tekst p { margin: 0 0 .9rem; }
+.mail-voet { padding: .2rem .9rem .8rem; }
+.mail-knop { display: inline-block; background: #0B57D0; color: #fff; font-weight: 700; font-size: .88rem; border-radius: 99px; padding: .35rem 1.1rem; }
+/* Aan, Cc, Bcc naast elkaar */
+.ccb { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .7rem; margin: 0 0 1.2rem; }
+.ccb-vak { display: flex; flex-direction: column; gap: .3rem; background: #FAFAFD; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: .8rem .9rem; font-size: .93rem; line-height: 1.45; }
+.ccb-naam { font-family: var(--head); font-weight: 800; font-size: 1.25rem; color: var(--navy-deep); }
+/* het bouwplan van een e-mail */
+.bouwplan { list-style: none; max-width: 640px; margin: 0 0 1.2rem; padding: 0; border: 2px solid var(--navy); border-radius: var(--radius-sm); overflow: hidden; }
+.bouwplan li { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); border-top: 1px solid var(--line); }
+.bouwplan li:first-child { border-top: 0; }
+.bp-naam { background: var(--peri-soft); color: var(--navy-deep); font-weight: 700; font-size: .85rem; padding: .45rem .7rem; }
+.bp-tekst { padding: .45rem .8rem; font-size: .95rem; }
+
+/* ==========================================================================
    Breedtes
    ========================================================================== */
 
@@ -333,5 +432,10 @@ footer.site { max-width: 1440px; margin: 0 auto; padding: 0 1.2rem 2rem; font-si
   .card-nav { padding: .8rem 1.1rem 1.1rem; }
   .card-head h1, .card-head h2 { font-size: 1.3rem; }
   .t-grid, .werkwijze { grid-template-columns: minmax(0, 1fr); }
+  .nodig, .ccb { grid-template-columns: minmax(0, 1fr); }
+  .nodig-item + .nodig-item::after { content: "↓"; left: 50%; top: -1.35rem; }
+  .nodig.vier .nodig-item + .nodig-item::after { left: 50%; }
+  .nodig.vier { grid-template-columns: minmax(0, 1fr); }
+  .bouwplan li { grid-template-columns: 7.5rem minmax(0, 1fr); }
   .brand-lesson, .dalton-mark { display: none; }
 }
