@@ -61,13 +61,18 @@ midden **één stap** met vijf vaste blokken, rechts de **checklist** met 19 tak
 
 ## 2. Klaarzetten
 
-### Stap 1 — Publiceren via GitHub Pages ⏳ *nog niet gebeurd, alleen op jouw vraag*
+### Stap 1 — Publiceren via GitHub Pages ✅ *gebeurd op 09-10-2026*
 
-Voorstel: repository `jonasdaltongent/Delen-NovaDepot`, Pages op branch `main`, map `/ (root)`. Het adres
-[jonasdaltongent.github.io/Delen-NovaDepot](https://jonasdaltongent.github.io/Delen-NovaDepot/) staat al op dia 7
-(`<!-- PAS AAN -->`), in `classroom.json` en in `lesdoelen.json`.
+Repository [`jonasdaltongent/Delen-NovaDepot`](https://github.com/jonasdaltongent/Delen-NovaDepot),
+Pages op branch `main`, map `/ (root)`. De lespagina staat op
+[jonasdaltongent.github.io/Delen-NovaDepot](https://jonasdaltongent.github.io/Delen-NovaDepot/), de dia's op
+[…/presentatie.html](https://jonasdaltongent.github.io/Delen-NovaDepot/presentatie.html); dat adres staat ook
+op dia 7, in `classroom.json` en in `lesdoelen.json`. Live bestanden nagekeken: gelijk aan de lokale.
 
-### Stap 2 — De opdracht in Classroom, met de koppeling ⏳ *nog niet gebeurd, alleen op jouw uitdrukkelijke ja*
+### Stap 2 — De opdracht in Classroom, met de koppeling ✅ *concept op 09-10-2026*
+
+Als **concept** klaargezet in [3ORLO](https://classroom.google.com/c/MTYyNjY1NjU1OTEx), [4ORLOa](https://classroom.google.com/c/MjUzMTgzNDM2NjZa) en [4ORLOb](https://classroom.google.com/c/MjUzMTc2OTkwNzNa) (teruggelezen: onderwerp, deadline, 20 punten, werkdocument en
+Leveringsplanning `STUDENT_COPY`). Toewijzen doe je zelf met **Toewijzen**.
 
 | | Opdracht: **Werkplek 3 — Delen met de juiste rechten** |
 |---|---|
@@ -84,7 +89,7 @@ Proef zonder Google (09-10-2026: in orde):
 python3 "/Volumes/Littlecisboy/Google drive/Toegepaste Informatica/_tools/zet_opdracht_klaar.py" "/Volumes/Littlecisboy/Google drive/Toegepaste Informatica/2026-2027/W07 - Les 08 - ORLO - Delen met de juiste rechten" --proef
 ```
 
-Daarna `--maak` (concept) en, als je het wil, `--publiceer`. Instructietekst (het script vult je e-mailadres en de
+Daarna `--maak` (concept); de AI publiceert niet in Classroom. Instructietekst (het script vult je e-mailadres en de
 deadline in; in `classroom.json` staat alleen `{email}`):
 
 ```text
