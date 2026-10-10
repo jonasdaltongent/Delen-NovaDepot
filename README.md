@@ -32,6 +32,7 @@ W07 - Les 08 - ORLO - Delen met de juiste rechten/
 ├── assets/
 │   ├── novadepot-logo.svg/.png, novadepot-icon.svg, dalton-gent-logo.png
 │   ├── fonts/                   # Atkinson Hyperlegible + Montserrat (OFL, zelf gehost)
+│   ├── mascotte/                # Dalton de bever, de poses uit het sjabloon (.webp)
 │   └── screenshots/             # zes schermafbeeldingen (09-10-2026) + LEESMIJ.md
 ├── werkdocument/
 │   ├── WP3_Delen-met-de-juiste-rechten.docx   # het werkdocument (kopie per leerling)
