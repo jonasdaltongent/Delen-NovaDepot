@@ -554,3 +554,4 @@ body:not([data-ai-hulp="aan"]) .ai-hulp { display: none !important; }
 .tt-tab .logo { width: 14px; height: 14px; }
 .met-logo { white-space: nowrap; }
 .met-logo .logo { margin-right: .25em; }
+.md-balk .logo { margin-right: .3rem; }
