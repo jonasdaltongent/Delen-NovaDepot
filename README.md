@@ -26,7 +26,7 @@ als kijker.
 ```text
 W07 - Les 08 - ORLO - Delen met de juiste rechten/
 ├── index.html                   # de lespagina: route · één stap · checklist
-├── presentatie.html             # 8 dia's voor de lesstart en "Ik doe"
+├── presentatie.html             # 10 dia's; dia 7 controle, dia 8 samen stap 1, dia 9 kloktijden
 ├── css/style.css, css/slides.css
 ├── js/script.js, js/slides.js
 ├── assets/
@@ -57,6 +57,17 @@ midden **één stap** met vijf vaste blokken, rechts de **checklist** met 19 tak
 - De **zelftest** in stap 6 heeft drie vragen: de kleinste rol, een versie terugzetten, *Beperkt*.
 - Windows 11 (lokaal 18). `localStorage` bewaart alleen de vinkjes en de laatste stap (voorvoegsel
   `novadepot_delen_v1_`), met een wisknop.
+
+- **Stap voor stap / Kort** (sinds 11-10-2026, zoals MW les 03; Jonas: "Pas je de lessen van ORLO ook aan volgens
+  de nieuwe afspraken?"): elke handeling is één vette regel; open je ze, dan zie je de kleine stapjes, elk met één
+  beeld (`assets/stapjes/`). Bovenaan *Wat moet je doen?* zet *Stap voor stap* alles open en *Kort* alles dicht. De
+  les begint in *Stap voor stap* (`data-modus-start="stap"`). *Hulp nodig?* is weg: wat erin stond, staat als grijze
+  regel onder het stapje of de handeling waar het misloopt; het tipvak bevat de meest waarschijnlijke fout. De
+  hulpvolgorde is korter: *Toon stapjes* → je buur → jij.
+- **De beelden bij de stapjes** (11-10-2026): uitsneden uit de schermafbeeldingen van 09-10-2026 (uit het prototype
+  in `2026-2027/_prototype - stap voor stap (les 08)/`) en `map-delen.png`. Waar geen schermafbeelding is (de rol
+  naast de naam van je buur, **Opslaan**, **Invoegen**, *Gedeeld met mij*, **Toegang verwijderen**) staat een tekening
+  in HTML en CSS (`.teken-delen`, `.teken-ui`): met één leerlingenaccount kan ik niet delen met een buur.
 
 ---
 
@@ -115,7 +126,7 @@ al een (een Google-document, met vier regels, met niemand gedeeld). Op dia 5 kli
 
 ### Afvinklijst vóór de les
 
-- [ ] De lespagina staat online en het adres op dia 7 klopt.
+- [ ] De lespagina staat online en het adres op dia 9 klopt.
 - [ ] De opdracht staat in de drie klassen, met drie bijlagen, allebei de documenten als **kopie per leerling**, en je
       e-mailadres in de instructie.
 - [ ] Met een **leerlingaccount** getest: de kopie van de planning delen met een ander leerlingaccount lukt (zie §8).
@@ -142,7 +153,7 @@ Nederlandse help (nagelezen 09-10-2026):
 | Inleveren | **Inleveren** · **Inleveren ongedaan maken** | [Classroom 6020285](https://support.google.com/edu/classroom/answer/6020285?hl=nl) |
 
 Klik je op de **tijd** van een versie, dan opent een vakje om ze een naam te geven (dat bleek bij het opnemen): **Esc**
-sluit het. Dat staat bij *Hulp nodig?* in stap 4.
+sluit het. Dat staat als grijze regel in stap 4.
 
 ---
 
@@ -151,7 +162,9 @@ sluit het. Dat staat bij *Hulp nodig?* in stap 4.
 | Fase | Tijd | Wat |
 |---|---|---|
 | **Instructie** | **10'** | Dia 1 terwijl de computers opstarten. Dia 2 lesstart (3'): *welke naam hoort bij de facturen?* Dia 3–6 (5'30"): lesdoel, drie rollen voorspellen, demo delen, demo een regel terug. Dia 7 *Zo werk je verder* (30"). |
-| **Keuzewerktijd** | **40'** | Dia 7 blijft staan; de duo's werken stap 1 tot 6 af, inleveren inbegrepen. Dia 8 in de laatste minuut. |
+| **Controle** | **1'** | Dia 7: *welke rol kies je?* (Reageerder), iedereen antwoordt met vingers. |
+| **Samen** | **3'** | Dia 8: iedereen doet stap 1 terwijl jij de schermen ziet; duim op als ze klaar zijn. |
+| **Keuzewerktijd** | **tot het einde** | Dia 9 blijft staan, met **kloktijden** uit de planning (`_tools/zet_lesmomenten.py`; T rekent opnieuw); de duo's werken stap 2 tot 6 af, inleveren inbegrepen. Dia 10 in de laatste minuut. |
 
 **Eerste rondgang:** heeft iedereen een buur (of een groepje van drie)? Delen ze met het juiste schoolaccount, en
 staat *Algemene toegang* op *Beperkt*?
@@ -237,11 +250,16 @@ De repository krijgt dezelfde `pre-push` hook als de andere lessen (`_tools/upda
 
 ## 8. Wat nog moet blijken in de klas
 
+- **Stap voor stap / Kort** (overgenomen van MW les 03, 11-10-2026): kiezen leerlingen zelf *Kort*? Wordt de
+  pagina met alle beelden te lang? Kloppen de tekeningen (rol naast de naam, Opslaan, Invoegen) met hun scherm?
+- Komen ze vlotter op gang na de controledia en *Iedereen doet stap 1*?
+
+
 1. **Delen tussen leerlingaccounts.** Dat mag (jouw antwoord, 09-10-2026). Nog niet getest: verschijnen de namen van
-   klasgenoten in de lijst bij *Delen*? (Anders typen ze het schoolmailadres; dat staat bij *Hulp nodig?*.)
+   klasgenoten in de lijst bij *Delen*? (Anders typen ze het schoolmailadres; dat staat als grijze regel onder het stapje.)
 2. **De kopie uit Classroom delen.** Vóór het inleveren is de leerling eigenaar van de eigen kopie (bij het inleveren gaat
    het eigendom naar jou). Test met een leerlingaccount dat delen lukt.
-3. **De knop Opslaan** na het veranderen van een rol komt uit de help, niet van jouw scherm. Bij *Hulp nodig?* in stap 3
+3. **De knop Opslaan** na het veranderen van een rol komt uit de help, niet van jouw scherm. In stap 3
    staat: zie je *Klaar*, klik dan op *Klaar*.
 4. **De versiegeschiedenis** groepeert bewerkingen die kort na elkaar gebeuren. De versie van vóór het wissen is er
    altijd (minstens de versie toen de kopie gemaakt werd); de leerling kiest de versie waarin de regel er nog staat.
