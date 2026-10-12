@@ -9,6 +9,7 @@ lesdag: "3ORLO wo 14 oktober (2de uur), 4ORLOb wo 14 oktober (3de uur), 4ORLOa d
 leerplan: "Leerplannen/Leerplannen_2de_graad_TOINFO_ORLO_arbeidsmarkt.md"
 jaarplan: "Leerplannen/Lessenplan_TOINFO_ORLO_arbeidsmarkt_2026-2027.md — module 2, les 08"
 opgesteld_volgens: "_afspraken/ (werkruimte Toegepaste Informatica)"
+register: "_bronnen/register/D-bestandsbeheer.md § D3 · A-communicatie.md § A5 · didactiek.md § D7"
 ---
 
 # Lesvoorbereiding — Les 08: Delen met de juiste rechten
@@ -250,3 +251,25 @@ wel het doel gemist).
 - *Hulp nodig?* per stap en een zelftest met directe feedback.
 - Schermafbeeldingen die alleen verschijnen als het bestand bestaat (`index.html?leraar` toont de plaatsen).
 - Toestel: Windows 11 (lokaal 18). Geen logins, tracking of externe scripts.
+
+## Bronnenonderzoek
+
+Achteraf gedaan op 12-10-2026: de les bestond al vóór de afspraak over bronnenonderzoek (11-10-2026). Alle
+bronnen uit register D3, A5 en D7 gelezen op de genoemde plaats, daarna breder gezocht (`"version history" OR
+versiegeschiedenis`, `permissions OR toegangsrechten`, `"iedereen met de link"`, `cloud`, in Lift `toegang OR cloud`).
+Alleen verwijzingen en eigen woorden.
+
+| Bron | Wat de les eruit gebruikt | Bewust niet |
+|---|---|---|
+| GBA Stappenplan | p. 12: ga na wie welke toegang krijgt (lezen, aanpassen, verwijderen) = de drie rollen · p. 8 en 16: niet meer dan nodig, toegang beperken tot wie bevoegd is = *zo weinig als nodig* | de regels voor scholen zelf (register, bewaartermijnen) |
+| TC KS4 World of work | L4, A2 *Scenario comparison*, scenario 2: toegang alleen voor wie het nodig heeft, met verschillende niveaus (bekijken of bewerken) | scenario 1 (ingelogd blijven): past bij les 09 |
+| TC KS3 Cybersecurity | L5 act. 4 en slot (*Allocate the privileges*): rechten toekennen per functie = de werkvorm van deel 3 | wachtwoorden, 2FA en biometrie: les 09 |
+| Interreg, Magazijnhelden | p. 4–8: samenwerken en digitale basisvaardigheden als competentie in het magazijn (context) | — |
+| Wijze lessen, BB Pedagogy (D7) | de duo-test: elk doet het zelf op de eigen planning, de buur test | — |
+| Lift 3A Thema 4 | p. 53: cloudopslag als manier om documenten te bezorgen (alleen context) | — |
+
+**Geen handboek** in `_bronnen/` legt Kijker, Reageerder en Bewerker uit: de rollen, de suggesties en de versies
+komen uit de Drive- en Docs-help (`_vakinhoud/bestandsbeheer.md`). Twee nuances bewust niet op de lespagina
+(Jonas, 12-10-2026): *Niets is echt weg* (dia 7) geldt alleen voor de versiegeschiedenis, en een kijker kan
+standaard downloaden (*Nog na te kijken* 3 en 4 in het vakinhoudbestand).
+
