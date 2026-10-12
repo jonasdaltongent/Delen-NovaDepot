@@ -186,9 +186,10 @@ def kader(doc, titel, inhoud):
     return t
 
 
-def tabel(doc, kop, rijen, cm, invul=(), rijhoogte=1.0, voorbeeld_rij=None):
+def tabel(doc, kop, rijen, cm, invul=(), rijhoogte=1.0, voorbeeld_rij=None, vet=(), klein=()):
     """Een tabel met een kopregel. invul: de kolommen (0, 1, …) waarin de leerling typt: die cellen
-    worden een vak. voorbeeld_rij: de rij (1 = de eerste na de kop) die al ingevuld is (de demo)."""
+    worden een vak. voorbeeld_rij: de rij (1 = de eerste na de kop) die al ingevuld is (de demo).
+    vet / klein: kolommen in het vet / in 10 pt (bv. citaten)."""
     t = doc.add_table(rows=1 + len(rijen), cols=len(kop))
     t.alignment = WD_TABLE_ALIGNMENT.CENTER
     randen(t, buiten=HEX_PERI, binnen=HEX_LIJN)
@@ -203,7 +204,8 @@ def tabel(doc, kop, rijen, cm, invul=(), rijhoogte=1.0, voorbeeld_rij=None):
             c.vertical_alignment = WD_CELL_VERTICAL_ALIGNMENT.CENTER
             if waarde:
                 celtekst(c, waarde, kleur=GRIJS if r == voorbeeld_rij else None,
-                         cursief=(r == voorbeeld_rij and k in invul))
+                         cursief=(r == voorbeeld_rij and k in invul), vet=k in vet,
+                         grootte=10 if k in klein else None)
             elif k in invul:
                 vak(c)
         hoogte(t.rows[r], rijhoogte)
@@ -243,6 +245,35 @@ def controletabel(doc, rijen, kop=("Klopt?", "Wat moet kloppen?", "Punten")):
         hoogte(rij, 0.9)
     niet_splitsen(t)
     ruimte(doc, 4)
+    return t
+
+
+def mailvenster(doc, delen):
+    """Een venster dat eruitziet als 'Nieuw bericht' in Gmail (MW en MWW les 3), zonder knop Verzenden: er
+    wordt niets verstuurd. delen: (grijs label, hoogte in cm) per vak van het bericht."""
+    t = doc.add_table(rows=1 + 4 + len(delen), cols=2)
+    t.alignment = WD_TABLE_ALIGNMENT.CENTER
+    randen(t, buiten="9AA0A6")
+    breedtes(t, [3.2, BREEDTE - 3.2])
+    kopcel = t.rows[0].cells[0].merge(t.rows[0].cells[1])
+    schaduw(kopcel, "F2F6FC")
+    celtekst(kopcel, "Nieuw bericht", vet=True, kleur=RGBColor(0x20, 0x21, 0x24))
+    kopcel.vertical_alignment = WD_CELL_VERTICAL_ALIGNMENT.CENTER
+    hoogte(t.rows[0], 0.8)
+    for i, veld in enumerate(["Aan", "Cc", "Bcc", "Onderwerp"], start=1):
+        links, rechts = t.rows[i].cells
+        celtekst(links, veld, kleur=GRIJS)
+        vak(rechts)
+        for c in (links, rechts):
+            c.vertical_alignment = WD_CELL_VERTICAL_ALIGNMENT.CENTER
+            cel_randen(c, "DADCE0", dikte=6, kanten=("bottom",))
+        hoogte(t.rows[i], 0.85)
+    for j, (label, cm) in enumerate(delen):
+        rij = t.rows[5 + j]
+        celtekst(rij.cells[0], label, kleur=GRIJS, grootte=10)
+        vak(rij.cells[1])
+        hoogte(rij, cm)
+    niet_splitsen(t)
     return t
 
 
