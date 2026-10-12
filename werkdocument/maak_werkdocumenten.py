@@ -24,8 +24,9 @@ LET OP bij aanpassen:
 """
 import os
 
+import huisstijl as hs   # de huisstijl van het werkdocument (uit _sjablonen/lespakket/werkdocument/)
+
 from docx import Document
-from docx.enum.table import WD_TABLE_ALIGNMENT
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.shared import Cm, Pt, RGBColor
@@ -36,7 +37,6 @@ PLANNING = os.path.join(HERE, "Leveringsplanning.docx")
 
 NAVY = RGBColor(0x2A, 0x39, 0x73)
 GREY = RGBColor(0x4D, 0x55, 0x73)
-GRIJS = RGBColor(0x80, 0x80, 0x80)
 
 # De vier leveringen van dinsdag 13 oktober 2026: uur, leverancier, poort, pallets
 LEVERINGEN = [
@@ -94,184 +94,43 @@ def tekst(doc, s, vet=False, klein=False, cursief=False, na=6, grootte=11, kleur
     return p
 
 
-def kop(doc, s, grootte=13, voor=14):
-    p = doc.add_paragraph()
-    p.paragraph_format.space_before = Pt(voor)
-    p.paragraph_format.space_after = Pt(4)
-    p.paragraph_format.keep_with_next = True
-    r = p.add_run(s)
-    lettertype(r)
-    r.bold = True
-    r.font.size = Pt(grootte)
-    r.font.color.rgb = NAVY
-    return p
-
-
-def _voeg_in_voor(ouder, el, opvolgers):
-    """Voeg el in vóór het eerste bestaande element uit opvolgers (OOXML-volgorde), anders achteraan."""
-    for tag in opvolgers:
-        ref = ouder.find(qn(tag))
-        if ref is not None:
-            ref.addprevious(el)
-            return el
-    ouder.append(el)
-    return el
-
-
-def vaste_tabel(t, breedtes_cm, randkleur="8C8C8C"):
-    """Vaste kolombreedtes en dunne randen, zodat Google Documenten de tabel toont zoals bedoeld."""
-    tbl = t._tbl
-    tblpr = tbl.tblPr
-    tblw = tblpr.find(qn("w:tblW"))
-    if tblw is None:
-        tblw = _voeg_in_voor(tblpr, OxmlElement("w:tblW"),
-                             ("w:jc", "w:tblCellSpacing", "w:tblInd", "w:tblBorders", "w:shd",
-                              "w:tblLayout", "w:tblCellMar", "w:tblLook"))
-    tblw.set(qn("w:w"), str(int(round(sum(breedtes_cm) * 567))))
-    tblw.set(qn("w:type"), "dxa")
-    randen = OxmlElement("w:tblBorders")
-    for kant in ("top", "left", "bottom", "right", "insideH", "insideV"):
-        el = OxmlElement("w:" + kant)
-        el.set(qn("w:val"), "single")
-        el.set(qn("w:sz"), "6")
-        el.set(qn("w:space"), "0")
-        el.set(qn("w:color"), randkleur)
-        randen.append(el)
-    _voeg_in_voor(tblpr, randen, ("w:shd", "w:tblLayout", "w:tblCellMar", "w:tblLook"))
-    indeling = OxmlElement("w:tblLayout")
-    indeling.set(qn("w:type"), "fixed")
-    _voeg_in_voor(tblpr, indeling, ("w:tblCellMar", "w:tblLook"))
-    for kolom, b in zip(tbl.tblGrid.findall(qn("w:gridCol")), breedtes_cm):
-        kolom.set(qn("w:w"), str(int(round(b * 567))))
-    for rij in t.rows:
-        for cel, b in zip(rij.cells, breedtes_cm):
-            cel.width = Cm(b)
-    return t
-
-
-def schaduw(cel, kleur="E4E8F6"):
-    tcpr = cel._tc.get_or_add_tcPr()
-    shd = OxmlElement("w:shd")
-    shd.set(qn("w:val"), "clear")
-    shd.set(qn("w:fill"), kleur)
-    tcpr.append(shd)
-
-
-def cel_tekst(cel, s, vet=False, grootte=10.5, cursief=False):
-    cel.text = ""
-    p = cel.paragraphs[0]
-    p.paragraph_format.space_after = Pt(0)
-    r = p.add_run(s)
-    lettertype(r)
-    r.bold = vet
-    r.italic = cursief
-    r.font.size = Pt(grootte)
-
-
-def antwoordlijnen(doc, aantal=2):
-    for _ in range(aantal):
-        p = doc.add_paragraph()
-        p.paragraph_format.space_after = Pt(2)
-        r = p.add_run("_" * 78)
-        lettertype(r)
-        r.font.color.rgb = GRIJS
-
-
-def tabel(doc, koppen, breedtes, rijen, hoogte=0.9):
-    """Een tabel met kopregel; rij 1 staat al ingevuld (cursief) als voorbeeld; kolom 1 vet."""
-    t = doc.add_table(rows=len(rijen) + 1, cols=len(koppen))
-    t.style = "Table Grid"
-    t.alignment = WD_TABLE_ALIGNMENT.CENTER
-    vaste_tabel(t, breedtes)
-    for i, k in enumerate(koppen):
-        cel_tekst(t.rows[0].cells[i], k, vet=True)
-        schaduw(t.rows[0].cells[i])
-    for i, rij in enumerate(rijen, start=1):
-        for j, w in enumerate(rij):
-            if w:
-                cel_tekst(t.rows[i].cells[j], w, cursief=(i == 1 and j > 0), grootte=9.5, vet=(j == 0))
-        t.rows[i].height = Cm(hoogte)
-    return t
-
-
 # ---------- 1. Het werkdocument ----------
 def werkdocument():
-    doc = basis_document("WP3 Delen met de juiste rechten - werkdocument")
+    """In de huisstijl van 12-10-2026 (huisstijl.py): alleen wat de leerling invult. Hoe hij werkt, staat op
+    de lespagina; de zelfcontrole is de checklist van de lespagina."""
+    doc = hs.nieuw_document()
+    doc.core_properties.title = "WP3 Delen met de juiste rechten - werkdocument"
+    hs.kopblok(doc, "DELEN MET DE JUISTE RECHTEN", punten=20)
 
-    p = doc.add_paragraph()
-    p.paragraph_format.space_after = Pt(0)
-    r = p.add_run("WERKDOCUMENT — DELEN MET DE JUISTE RECHTEN")
-    lettertype(r)
-    r.bold = True
-    r.font.size = Pt(18)
-    r.font.color.rgb = NAVY
-    tekst(doc, "Les 08 — Mijn digitale werkplek 3  ·  Toegepaste Informatica  ·  NovaDepot", klein=True, na=8)
-
-    t = doc.add_table(rows=1, cols=3)
-    t.style = "Table Grid"
-    vaste_tabel(t, [7.0, 4.5, 5.5])
-    for i, label in enumerate(["Naam:", "Klas:", "Datum:"]):
-        cel_tekst(t.rows[0].cells[i], label + " ", vet=True, grootte=11)
-
-    kop(doc, "Zo werk je", 12, voor=10)
-    for s in [
-        "1.  Op de lespagina lees je wat je moet doen, stap voor stap.",
-        "2.  Je test het delen met je buur, in je Leveringsplanning.",
-        "3.  In dit werkdocument schrijf je op wat je merkte.",
-        "4.  Klik op Inleveren: Classroom levert dit document en je Leveringsplanning samen in.",
-    ]:
-        tekst(doc, s, na=1)
-
-    # ---- deel 1 ----
-    kop(doc, "Deel 1 — Wat kan je met elke rol? (stap 2, 3 en 4)")
-    tekst(doc, "Test het in de planning van je buur. Vul na elke test in: ja of nee. Rij 1 is een voorbeeld.", klein=True)
-    tabel(doc, ["Wat kan je?", "Als Kijker", "Als Reageerder", "Als Bewerker"], [6.0, 3.6, 3.7, 3.7], [
+    hs.deel(doc, 1, "Wat kan je met elke rol?")
+    hs.tabel(doc, ["Wat kan je?", "Als Kijker", "Als Reageerder", "Als Bewerker"], [
         ("De planning lezen", "ja", "ja", "ja"),
         ("Een reactie schrijven", "", "", ""),
-        ("Een regel zelf veranderen", "", "", ""),
-    ])
-    tekst(doc, "Zelf veranderen: de tekst verandert meteen. Een voorstel (suggestie) telt niet mee.", klein=True, na=2)
+        ("Een regel zelf veranderen (een voorstel telt niet)", "", "", ""),
+    ], [6.0, 3.6, 3.7, 3.7], invul=(1, 2, 3), rijhoogte=1.0, voorbeeld_rij=1)
 
-    # ---- deel 2 ----
-    kop(doc, "Deel 2 — Een regel terug (stap 4)")
-    tekst(doc, "Vraag 1. Welke regel wiste je buur in jouw planning?", vet=True, na=2)
-    antwoordlijnen(doc, 1)
-    tekst(doc, "Vraag 2. Hoe kreeg je de regel terug? Schrijf het in je eigen woorden.", vet=True, na=2)
-    antwoordlijnen(doc, 3)
+    hs.deel(doc, 2, "Een regel terug")
+    hs.vraag(doc, "Vraag 1. Welke regel wiste je buur in jouw planning?")
+    hs.antwoordvak(doc, 1.2)
+    hs.vraag(doc, "Vraag 2. Hoe kreeg je de regel terug? Schrijf het in je eigen woorden.")
+    hs.antwoordvak(doc, 2.4)
 
-    # ---- deel 3 ----
-    kop(doc, "Deel 3 — Wie krijgt welke rol? (stap 5 en 6)")
-    tekst(doc, "Kies Kijker, Reageerder of Bewerker. Geef zo weinig rechten als nodig. Rij 1 is een voorbeeld.", klein=True)
-    tabel(doc, ["Wie?", "Wat moet die persoon kunnen?", "Welke rol?"], [4.8, 8.2, 4.0], [
+    hs.deel(doc, 3, "Wie krijgt welke rol?")
+    hs.tabel(doc, ["Wie?", "Wat moet die persoon kunnen?", "Welke rol?"], [
         ("Sara Claes (preventiedienst)", "de planning lezen, maar niets veranderen", "Kijker"),
         ("Lotte Maes (personeelsdienst)", "de planning lezen en een opmerking schrijven", ""),
         ("Een collega in het magazijn", "de planning lezen en aanpassen", ""),
         ("Je leraar, voor je map NovaDepot", "je map bekijken", ""),
-    ], hoogte=1.0)
-    tekst(doc, "")
-    tekst(doc, "Waarom kies je bij Algemene toegang Beperkt, en niet Iedereen met de link?", vet=True, na=2)
-    antwoordlijnen(doc, 2)
+    ], [4.8, 8.2, 4.0], invul=(2,), rijhoogte=1.0, voorbeeld_rij=1)
+    hs.vraag(doc, "Waarom kies je bij Algemene toegang Beperkt, en niet Iedereen met de link?")
+    hs.antwoordvak(doc, 1.8)
 
-    # ---- zelfcontrole ----
-    kop(doc, "Zelfcontrole — aankruisen vóór je inlevert")
-    for s in [
-        "In mijn Leveringsplanning staat de regel van 10.30 uur er weer in.",
-        "Mijn buur heeft geen toegang meer tot mijn Leveringsplanning.",
-        "Mijn leraar kan mijn map NovaDepot bekijken, als Kijker.",
-        "Bij Algemene toegang staat Beperkt.",
-        "Deel 1, 2 en 3 zijn ingevuld.",
-    ]:
-        tekst(doc, "☐  " + s, na=1)
-
-    # ---- extra ----
-    kop(doc, "Extra — niet verplicht")
-    tekst(doc, "Alleen als je al ingeleverd hebt. Klik in de opdracht op Inleveren ongedaan maken. "
-               "Lever daarna opnieuw in.", klein=True)
-    tekst(doc, "a) Geef de herstelde versie van je planning een naam, bijvoorbeeld Planning in orde. "
-               "Welke naam gaf je?", vet=True, na=2)
-    antwoordlijnen(doc, 1)
-    tekst(doc, "b) Beantwoord de reactie van je buur in je planning. Wat antwoordde je?", vet=True, na=2)
-    antwoordlijnen(doc, 1)
+    hs.deel(doc, None, "Extra — niet verplicht")
+    hs.vraag(doc, "a) Geef de herstelde versie van je planning een naam, bijvoorbeeld Planning in orde. "
+                  "Welke naam gaf je?")
+    hs.antwoordvak(doc, 1.2)
+    hs.vraag(doc, "b) Beantwoord de reactie van je buur in je planning. Wat antwoordde je?")
+    hs.antwoordvak(doc, 1.2)
 
     doc.save(UIT)
 

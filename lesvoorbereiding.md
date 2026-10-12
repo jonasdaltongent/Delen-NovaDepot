@@ -129,10 +129,12 @@ De instructie bevat je e-mailadres (voor stap 5); het script vult het in, het st
 
 ## 14. Het individuele werkdocument
 
-**WP3_Delen-met-de-juiste-rechten** (gegenereerd met `werkdocument/maak_werkdocumenten.py`): kopregel · *Zo werk je* ·
+**WP3_Delen-met-de-juiste-rechten** (gegenereerd met `werkdocument/maak_werkdocumenten.py`, huisstijl van 12-10-2026):
+logo, titel en puntenvak (/20) ·
 **deel 1** *Wat kan je met elke rol?* (lezen, reageren, zelf veranderen × kijker, reageerder, bewerker; **rij 1
 ingevuld**) · **deel 2** twee vragen over de verdwenen regel · **deel 3** *Wie krijgt welke rol?* (vier personen,
-**rij 1 ingevuld**) en een vraag over *Beperkt* · zelfcontrole · extra. Verwachte antwoorden: `README.md` §4.
+**rij 1 ingevuld**) en een vraag over *Beperkt* · extra. Elk antwoord in een lichtblauw vak; de uitleg staat op de
+lespagina, de zelfcontrole is de checklist van de lespagina. Verwachte antwoorden: `README.md` §4.
 
 **Leveringsplanning**: vier losse regels (geen tabel), zodat de buur in stap 4 één regel kan selecteren en wissen.
 

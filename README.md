@@ -37,7 +37,8 @@ W07 - Les 08 - ORLO - Delen met de juiste rechten/
 ├── werkdocument/
 │   ├── WP3_Delen-met-de-juiste-rechten.docx   # het werkdocument (kopie per leerling)
 │   ├── Leveringsplanning.docx                 # het oefendocument van de duo-test (kopie per leerling)
-│   └── maak_werkdocumenten.py                 # maakt beide opnieuw (python-docx)
+│   ├── maak_werkdocumenten.py                 # maakt beide opnieuw (python-docx)
+│   └── huisstijl.py, go-dalton-gent.png       # de huisstijl van het werkdocument (uit _sjablonen/lespakket/werkdocument/)
 ├── lesvoorbereiding.md
 ├── dalton-lesfiche.html         # openen, Kopieer de fiche, plakken in je planner
 ├── classroom.json               # de opdracht voor _tools/zet_opdracht_klaar.py
@@ -250,6 +251,8 @@ De repository krijgt dezelfde `pre-push` hook als de andere lessen (`_tools/upda
 
 ## 8. Wat nog moet blijken in de klas
 
+- **Het nieuwe werkdocument** (12-10-2026): geen naam/klas/datum, *Zo werk je* of zelfcontrole meer, antwoorden in
+  lichtblauwe vakken. Typen ze vlot ja/nee in de vakken van deel 1? Missen ze de uitleg die nu alleen op de lespagina staat?
 - **Stap voor stap / Kort** (overgenomen van MW les 03, 11-10-2026): kiezen leerlingen zelf *Kort*? Wordt de
   pagina met alle beelden te lang? Kloppen de tekeningen (rol naast de naam, Opslaan, Invoegen) met hun scherm?
 - Komen ze vlotter op gang na de controledia en *Iedereen doet stap 1*?
