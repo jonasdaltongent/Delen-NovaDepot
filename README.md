@@ -14,6 +14,13 @@
      klassen 3ORLO, 4ORLOa, 4ORLOb · les 08 van W07 · toestel lokaal 18, Windows 11 ·
      lesstart = ophalen uit de vorige les · delen tussen leerlingaccounts mag · werkdocument: ja. -->
 
+> [!IMPORTANT]
+> **Niet gegeven in 2026-2027** (Jonas, 13-10-2026). Na het eerste uur van les 07 in 4ORLOb en 3ORLO was de tijd te
+> krap en niemand snel klaar: les 07 kreeg twee lesuren, en de klas oefent eerst de manier van werken in met lessen
+> zonder bestanden (les 09 en 11). De opdracht staat nog als **concept** in de drie klassen, zonder tijdstip.
+> Delen, rollen en versies komen terug in les 59 (projectstart in duo); deze lesmap blijft daarvoor bestaan.
+> `lesdoelen.json` heeft `"vervallen"`: de les telt niet mee in het doelenoverzicht en staat niet op de overzichtspagina.
+
 De leerlingen testen in duo wat een **kijker**, een **reageerder** en een **bewerker** kan: elk deelt de eigen
 **Leveringsplanning** met de buur. Als bewerker wist de buur de regel van 10.30 uur; de leerling zet de planning terug
 met de **versiegeschiedenis**. Daarna halen ze de toegang van de buur weg en delen ze hun map **NovaDepot** met jou,
