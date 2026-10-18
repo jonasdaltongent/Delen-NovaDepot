@@ -9,6 +9,7 @@ lesdag: "3ORLO wo 14 oktober (2de uur), 4ORLOb wo 14 oktober (3de uur), 4ORLOa d
 leerplan: "Leerplannen/Leerplannen_2de_graad_TOINFO_ORLO_arbeidsmarkt.md"
 jaarplan: "Leerplannen/Lessenplan_TOINFO_ORLO_arbeidsmarkt_2026-2027.md — module 2, les 08"
 opgesteld_volgens: "_afspraken/ (werkruimte Toegepaste Informatica)"
+vakinhoud: "_vakinhoud/bestandsbeheer.md"
 register: "_bronnen/register/D-bestandsbeheer.md § D3 · A-communicatie.md § A5 · didactiek.md § D7"
 ---
 
