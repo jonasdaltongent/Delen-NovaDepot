@@ -73,7 +73,7 @@ midden **één stap** met vijf vaste blokken, rechts de **checklist** met 19 tak
   regel onder het stapje of de handeling waar het misloopt; het tipvak bevat de meest waarschijnlijke fout. De
   hulpvolgorde is korter: *Toon stapjes* → je buur → jij.
 - **De beelden bij de stapjes** (11-10-2026): uitsneden uit de schermafbeeldingen van 09-10-2026 (uit het prototype
-  in `2026-2027/_prototype - stap voor stap (les 08)/`) en `map-delen.png`. Waar geen schermafbeelding is (de rol
+  in `_archief/prototype - stap voor stap (les 08)/`, tot 18-10-2026 in `2026-2027/`) en `map-delen.png`. Waar geen schermafbeelding is (de rol
   naast de naam van je buur, **Opslaan**, **Invoegen**, *Gedeeld met mij*, **Toegang verwijderen**) staat een tekening
   in HTML en CSS (`.teken-delen`, `.teken-ui`): met één leerlingenaccount kan ik niet delen met een buur.
 
